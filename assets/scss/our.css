@@ -72,6 +72,8 @@ body {
 
 section {
   background: linear-gradient(to top, rgb(19, 19, 19), rgb(30, 30, 30));
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 .here {
@@ -92,6 +94,8 @@ section {
 
 #aside1 {
   width: 25%;
+  position: relative;
+  height: 100vh;
 }
 
 #section {
@@ -246,8 +250,14 @@ section {
 
 #playlist {
   color: rgb(130, 153, 153);
+  height: 75%;
+  overflow-y: scroll;
   font-weight: 400;
   font-size: 0.9em;
+  position: absolute;
+  top: 330px;
+  overflow-y: scroll;
+  width: 90%;
 }
 #playlist li:hover {
   cursor: pointer;
@@ -379,8 +389,13 @@ section {
   padding: 0;
 }
 
-#menu_sinistra {
+nav {
+  width: 23%;
   font-size: 0.9em;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: black;
 }
 
 /* ************++ */

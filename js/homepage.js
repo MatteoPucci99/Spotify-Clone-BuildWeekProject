@@ -24,7 +24,7 @@ const generateCards = (album) => {
       const newCol = document.createElement("div");
       newCol.classList.add("col", "my-2","p-1");
       newCol.innerHTML = `
-    <div class="card h-100 border-0 p-2 bg-white-50" style="width:12rem;" >
+    <div class="card h-100 border-0 p-2 bg-white-50" style="width: 12rem;">
         <img src="${el.album.cover_big}" class="card-img-top img-fluid" alt="img-${index}">
         <div class="card-body d-flex flex-column justify-content-between px-0">
             <div>
