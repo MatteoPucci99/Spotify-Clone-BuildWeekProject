@@ -9,10 +9,9 @@ const secondRow = document.getElementById("secondContent");
 
 // FUNCTION PER GENERARE ALBUM DETAILS
 const generateDetails = (details) => {
-  const detailsContent = document.createElement("div");
   secondRow.innerHTML = `
   <div class="d-flex justify-content-center mt-4">
-    <img src="${details.cover_big}" alt="img" width="70%" />
+    <img src="${details.cover_big}" alt="img" width="70%" id="myImg"/>
   </div>
   <div class="d-flex flex-column justify-content-end">
     <h1 class="mt-4 fs-md-4">${details.title}</h1>
@@ -33,6 +32,8 @@ const generateDetails = (details) => {
     </div>
   </div>
   `;
+  const myImg = document.getElementById("myImg");
+  console.log(myImg);
 };
 
 // FUNCTION PER GENERARE LE TRACKS
