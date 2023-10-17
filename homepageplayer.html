@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" dark mode>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HomePage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="stylesheet" href="assets/scss/our.css" />
+    <link rel="stylesheet" href="style.css" />
+    +
+    <link rel="stylesheet" href="play.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" id="bg">
+        <div class="col d-none d-md-block col-md-3 col-lg-2">
+          <div>
+            <!-- al posto di div qua subito sopra c'era main, nel caso in cui succede qualcosa rimetti main -->
+            <aside id="left" class="py-3">
+              <div id="sticky">
+                <section id="menu_sinistra">
+                  <nav>
+                    <div id="menu_principale ">
+                      <ul class="list-unstyled">
+                        <li id="icon-home">
+                          <a href="home.html" class="text-decoration-none">
+                            <img
+                              class="icon-home-side"
+                              src="assets/imgs/icone/sidebar_home.png"
+                              alt=""
+                            />
+                            <img
+                              class="icon-home-side-hide"
+                              src="assets/imgs/icone/sidebar_home_hover.png"
+                              alt=""
+                            />
+                            Home
+                          </a>
+                        </li>
+
+                        <li id="icon-search">
+                          <a href="search.html" class="text-decoration-none">
+                            <img
+                              class="icon-home-side"
+                              src="assets/imgs/icone/sidebar_search.png"
+                              alt=""
+                            />
+                            <img
+                              class="icon-home-side-hide"
+                              src="assets/imgs/icone/sidebar_search_hover.png"
+                              alt=""
+                            />
+                            Cerca
+                          </a>
+                        </li>
+
+                        <li id="icon-library">
+                          <a href="#" class="text-decoration-none">
+                            <img
+                              class="icon-home-side"
+                              src="assets/imgs/icone/sidebar_library.png"
+                              alt=""
+                            />
+                            <img
+                              class="icon-home-side-hide"
+                              src="assets/imgs/icone/sidebar_library_hover.png"
+                              alt=""
+                            />
+                            La tua libreria
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="menu_secondario">
+                      <ul class="list-unstyled logo">
+                        <li>
+                          <a href="#" class="text-decoration-none"
+                            ><i class="bi bi-plus piu"></i>Crea playlist</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="text-decoration-none"
+                            ><i class="bi bi-heart-fill cuore"></i>Brani che ti
+                            piacciono</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="text-decoration-none"
+                            ><i class="bi bi-bookmark-fill podcast"></i>I tuoi
+                            episodi</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </section>
+
+                <section id="playlist">
+                  <hr />
+                  <ul class="list-unstyled">
+                    <li><a href=""></a>🌔 playlist del cazzo</li>
+                    <li><a href=""></a>playlist del cazzo</li>
+                    <li><a href=""></a>playlist del cazzo 🌍</li>
+                    <li><a href=""></a>non ho fantasiaaaa</li>
+                    <li><a href=""></a>non so che scrivere</li>
+                    <li><a href=""></a>landing page</li>
+                    <li><a href=""></a>Maracaibooooo</li>
+                    <li><a href=""></a>Rock</li>
+                    <li><a href=""></a>javascript</li>
+                    <li><a href=""></a>Casino</li>
+                    <li><a href=""></a>festa</li>
+                    <li><a href=""></a>playlist del cazzo 🌍</li>
+                    <li><a href=""></a>playlist del cazzo 🌍</li>
+                    <li><a href=""></a>playlist del cazzo 🌍</li>
+                    <li><a href=""></a>playlist del cazzo 🌍</li>
+                  </ul>
+                </section>
+              </div>
+            </aside>
+          </div>
+        </div>
+        <div
+          class="col col-12 d-md-block col-md-9 col-lg-10 px-4"
+          id="contentCol"
+        >
+          <div class="row">
+            <div class="col-12 d-flex justify-content-end mt-2">
+              <i
+                class="bi bi-bell me-3 d-flex align-items-center"
+                style="font-size: 1.3em"
+              ></i>
+              <i
+                class="bi bi-people me-3"
+                onclick="openFriendsPage(event)"
+                style="font-size: 1.5em"
+              ></i>
+              <i class="bi bi-person" style="font-size: 1.5em"></i>
+            </div>
+          </div>
+
+          <!-- MERGE FROM MARISSA -->
+
+          <div class="container-fluid d-none d-lg-block">
+            <div class="row pt-4 pb-2 justify-content-between mx-0">
+              <div class="col-2 px-0 justify-content-start text-body-tertiary">
+                <i class="fas fa-chevron-circle-left pe-3 fa-lg"></i>
+                <i class="fas fa-chevron-circle-right fa-lg"></i>
+              </div>
+
+              <div class="col-10 d-flex justify-content-end pe-0">
+                <div class="rounded-pill bg-black pe-2">
+                  <img
+                    src="./assets/imgs/search/image-51.jpg"
+                    height="25px"
+                    class="rounded-circle me-1"
+                  /><span class="me-3">Mood Booster...</span
+                  ><i class="fas fa-caret-down"></i>
+                </div>
+              </div>
+            </div>
+            <div class="row py-3 align-items-center mx-0 here">
+              <div class="col-4">
+                <img src="assets/imgs/main/image-1.jpg" class="img-fluid" />
+              </div>
+              <div id="album" class="col-6 flex-grow-1">
+                <p class="mb-1">ALBUM</p>
+                <p class="text-secondary pe-2 mb-1 text-end">
+                  NASCONDI ANNUNCI
+                </p>
+                <h1 class="display-3">BRANO</h1>
+                <p>Artisti</p>
+                <p>suggerimento</p>
+                <button
+                  class="rounded-pill btn btn-success py-2 px-4 me-3 text-black"
+                >
+                  Play</button
+                ><button class="rounded-pill btn btn-dark py-2 px-4 me-4">
+                  Salva</button
+                ><i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h3 class="py-4">Buonasera</h3>
+            <!-- contenuto generato dinamicamente
+              strutturato per card con col 3 e 9 -->
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-2.jpg"
+                alt="Img 2"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
+                La tua playlist Rock!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-3.jpg"
+                alt="Img 3"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
+                La tua playlist Pop!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-1.jpg"
+                alt="Img 1"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                Brani che ti piacciono!
+              </p>
+            </div>
+          </div>
+          <!-- Seconda riga con row -->
+          <div class="row mt-2">
+            <!-- contenuto generato dinamicamente
+              strutturato per card con col 3 e 9 -->
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-4.jpg"
+                alt="Img 4"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-2" style="background-color: #2c2c2c">
+                La tua playlist House!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-5.jpg"
+                alt="Img 5"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                La tua playlist Metal!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-6.jpg"
+                alt="Img 6"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                Brani che ti piacciono!
+              </p>
+            </div>
+          </div>
+          <h3 class="mt-5">Top HipHop album</h3>
+          <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6" id="mainRow">
+            <!-- qua ci saranno le col e le cards -->
+          </div>
+          <h3 class="mt-5">Top Pop album</h3>
+          <div
+            class="row row-cols-1 row-cols-md-3 row-cols-lg-6"
+            id="secondRow"
+          >
+            <!-- qua ci saranno le col e le cards -->
+          </div>
+        </div>
+        <div
+          class="col d-none col-12 col-md-9 col-lg-2 bg-black"
+          id="activityCol"
+          style="height: 100vh"
+        >
+          <div class="d-flex justify-content-between mt-4">
+            <h1 class="text-white">Attività amici</h1>
+            <div class="d-flex align-items-center">
+              <i style="font-size: 1.5em" class="me-3 bi bi-person-plus"></i>
+              <i
+                style="font-size: 1.5em"
+                class="bi bi-x-lg"
+                onclick="closeFriendsPage(event)"
+              ></i>
+            </div>
+          </div>
+          <div class="row row-cols-1 mt-5">
+            <div
+              class="col d-flex justify-content-between mb-5 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/1.jpg"
+                    width="40"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Giorgio migliaccio</p>
+                  <p class="m-0">In camera - Yumi Zouma</p>
+                </div>
+              </div>
+              <div>
+                <p>2 ore</p>
+              </div>
+            </div>
+            <div
+              class="col d-flex justify-content-between mb-5 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/2.jpg"
+                    width="40"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Marissa Burca</p>
+                  <p class="m-0 fw-light">Aimed to Kill - Jade LeMac</p>
+                </div>
+              </div>
+              <div>
+                <p>5 ore</p>
+              </div>
+            </div>
+            <div
+              class="col d-flex justify-content-between mb-5 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/3.jpg"
+                    width="40"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Riccardo Di Bari</p>
+                  <p class="m-0">New Kings - Sleeping wolf</p>
+                </div>
+              </div>
+              <div>
+                <p>8 ore</p>
+              </div>
+            </div>
+            <div
+              class="col d-flex justify-content-between mb-5 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/4.jpg"
+                    width="40"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Vincenzo Melillo</p>
+                  <p class="m-0">Rebirth - Aaron Hibell</p>
+                </div>
+              </div>
+              <div>
+                <p>1 giorno</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- html del player nel footer  -->
+
+    <footer id="footer">
+      <div
+        class="d-flex justify-content-between align-items-center position-sticky bottom-0"
+        id="player-spotify"
+      >
+        <div class="d-flex justify-content-around">
+          <div>
+            <img
+              id="cover-player"
+              src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
+              alt=""
+            />
+          </div>
+          <div id="text-player">
+            <h4 id="title-song">Stairway to Heaven</h4>
+            <p id="sub-test_player">
+              <a
+                href="artist.html"
+                onclick='localStorage.setItem("id_artist", 848)'
+                >Led Zeppelin</a
+              >
+            </p>
+          </div>
+
+          <button id="heart-player" onclick="selectedHeart()">
+            <i class="bi bi-heart d-flex" id="heart"></i>
+            <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
+          </button>
+        </div>
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <div id="controls_player">
+            <div id="modal-placeholder" class="d-none">
+              <p>
+                <span id="replace-txt-added" class="d-none">Added to</span
+                ><span id="replace-txt-removed" class="">Removed from</span>
+                liked songs
+              </p>
+            </div>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-shuffle icons-play"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-skip-start-fill icons-play"></i>
+            </button>
+            <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
+              <i class="bi bi-play-circle-fill d-none" id="btn_play"></i>
+              <i class="bi bi-pause-circle" id="btn_pause"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-skip-end-fill icons-play"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-repeat icons-play"></i>
+            </button>
+          </div>
+
+          <div id="filler-bar">
+            <span id="progress-time">0:00</span>
+
+            <span id="container_filler-bar">
+              <span id="filler_bar-time"></span>
+            </span>
+
+            <span id="duration-time">0:30</span>
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-end align-items-center"
+          id="player_right-side"
+        >
+          <button class="iconPlayer"><i class="bi bi-mic"></i></button>
+          <button class="iconPlayer"><i class="bi bi-list"></i></button>
+
+          <div>
+            <div class="d-none" id="modal_control-device">
+              <div id="current_device">
+                <div>
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <div>
+                  <h3>Current device</h3>
+                  <p>This computer</p>
+                </div>
+              </div>
+              <div id="error_device">
+                <h4>No other device found</h4>
+              </div>
+              <div id="control_wifi">
+                <div><i class="bi bi-wifi"></i></div>
+                <div>
+                  <h4>check your WiFi</h4>
+                  <p>Connect the devices you are using to the same WiFi.</p>
+                </div>
+              </div>
+              <div id="control_another-device">
+                <div><i class="bi bi-pc-display"></i></div>
+                <div>
+                  <h4>Play from an other device.</h4>
+                  <p>It will automatically appear here.</p>
+                </div>
+              </div>
+              <div id="control_speaker">
+                <div><i class="bi bi-power"></i></div>
+                <div>
+                  <h4>Restart your speaker</h4>
+                  <p>Or follow setup instructions if it's a new device</p>
+                </div>
+              </div>
+              <div id="modal-sub">
+                <h4>Don't see your device?</h4>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </div>
+
+              <div id="square-rotate"></div>
+            </div>
+            <button>
+              <i
+                class="bi bi-pc-display-horizontal"
+                onclick="selectedModalControlDevic()"
+              ></i>
+            </button>
+          </div>
+
+          <button
+            id="btn_mute-audio"
+            onclick="selectedBtnMuteAudio(), mutedAudio()"
+          >
+            <i class="bi bi-volume-up" id="btn_volume-up"></i>
+            <i class="bi bi-volume-mute d-none" id="btn_volume-mute"></i>
+          </button>
+          <input
+            type="range"
+            class="form-range"
+            id="volume"
+            max="1"
+            min="0"
+            step="0.01"
+            onchange="changeVolume(this.value)"
+          />
+          <button class="iconPlayer" onclick="espandi()">
+            <i class="bi bi-arrows-angle-expand"></i>
+          </button>
+        </div>
+        <audio
+          class="player"
+          src="https://cdns-preview-0.dzcdn.net/stream/c-00bd440c9ec8b85f26d638febfda5e7c-6.mp3"
+        ></audio>
+      </div>
+    </footer>
+
+    <!-- script del player da associare gli id in base al click -->
+    <script src="/play.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="homepage.js"></script>
+  </body>
+</html>
