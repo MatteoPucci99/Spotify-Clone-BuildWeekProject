@@ -67,8 +67,6 @@
 }
 body {
   font-family: "Circular", sans-serif;
-  height: 100vh;
-  width: 100vw;
 }
 
 section {
@@ -85,18 +83,52 @@ section {
   line-height: 0.6;
 }
 
+#album p:nth-of-type(2) {
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 0.6;
+}
+
 #aside1 {
-  width: 20%;
-  height: 100vh;
+  width: 25%;
 }
 
 #section {
-  width: 65%;
-  height: 100vh;
+  width: 75%;
 }
 
 #aside2 {
-  width: 15%;
+  width: 0%;
+}
+
+.music {
+  font-size: 0.7em;
+}
+
+.time {
+  font-size: 0.7em;
+}
+
+#section.new-width {
+  width: 55%;
+}
+
+#aside2.new-width2 {
+  width: 20%;
+}
+
+#box {
+  width: 31%;
+  border-radius: 5px;
+  background-color: rgb(40, 40, 40);
+}
+
+#images {
+  width: 25%;
+}
+
+.names {
+  font-size: 0.8em;
 }
 
 /*!

@@ -19,13 +19,29 @@
   </head>
   <body>
     <main>
-      <div class="row">
+      <div class="row m-0">
         <aside id="aside1" ></aside>
         <section id="section" class="px-5">
-          <div class="row pt-4 pb-2 justify-content-between mx-0">
+          <!-- PULSANTI PER APERTURA DEGLI ASIDE  **********************+ -->
+          <div class="row">
+            <div class="col-12 d-flex justify-content-end mt-2">
+              <i
+                class="bi bi-bell me-3 d-flex align-items-center"
+                style="font-size: 1.2em"
+              ></i>
+              <i
+                class="bi bi-people me-3"
+                onclick="openFriendsPage(event)"
+                style="font-size: 1.2em"
+              ></i>
+              <i class="bi bi-person" style="font-size: 1.2em"></i>
+            </div>
+          </div>
+          <!-- INIZIO CORPO SECTION **************************** -->
+          <div class="row pt-2 pb-3 justify-content-between align-items-center mx-0">
             <div class="col-2 px-0 justify-content-start text-body-tertiary">
-              <i class="fas fa-chevron-circle-left pe-3 fa-lg"></i>
-              <i class="fas fa-chevron-circle-right fa-lg"></i>
+              <i class="fas fa-chevron-circle-left pe-3 fa-2x"><a href="homepage.html"></a></i>
+              <i class="fas fa-chevron-circle-right fa-2x"></i>
             </div>
             <div class="col-10 d-flex justify-content-end pe-0">
               <div class="rounded-pill bg-black pe-2">
@@ -38,184 +54,219 @@
               </div>
             </div>
           </div>
-          <!-- Sezione dell'album in evidenza -->
+          <!-- SEZIONE ALBUM SPONSORIZZATO ************************* -->
           <div class="row py-3 align-items-center mx-0 here">
             <div class="col-4">
               <img src="assets/imgs/main/image-1.jpg" class="img-fluid" />
             </div>
             <div id="album" class="col-6 flex-grow-1">
-              <p class="mb-1">ALBUM</p>
+              <p class="mb-2">ALBUM</p>
               <p class="text-secondary pe-2 mb-1 text-end">NASCONDI ANNUNCI</p>
-              <h1 class="display-3">BRANO</h1>
-              <p>Artisti</p>
-              <p>suggerimento</p>
+              <h1 class="display-3">INDUSTRY BABY</h1>
+              <p>Lil Nas X, Jack Harlow</p>
+              <p>Ascolta il nuovo singolo di Lil Nas X e Jack Harlow</p>
               <button class="rounded-pill btn btn-success py-2 px-4 me-3 text-black">
                 Play</button
-              ><button class="rounded-pill btn btn-dark py-2 px-4 me-4">Salva</button
-              ><i class="fas fa-ellipsis-h"></i>
+              ><button class="rounded-pill btn btn-outline-secondary py-2 px-4 me-4 text-white">Salva</button
+              ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-three-dots text-secondary" viewBox="0 0 16 16">
+                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+              </svg>
             </div>
           </div>
-          <!-- sezione delle playlist -->
+          <!-- SEZIONE ELENCO PLAYLISTS CENTRALE ************************+++ -->
           <h3 class="py-4">Buonasera</h3>
-          <div class="row">
-            <!-- contenuto generato dinamicamente
-            strutturato per card con col 3 e 9 -->
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-2.jpg"
-                alt="Img 2"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
-                La tua playlist Rock!
-              </p>
+          <div class="row m-0 justify-content-between">
+            <div id="box" class="ps-0 d-flex justify-content-start me-3 mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-2.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-3.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-4.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-5.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">early stage emily syndrome (sett-ott 2022)</p>
+                </div>
             </div>
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-3.jpg"
-                alt="Img 3"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
-                La tua playlist Pop!
-              </p>
+            <div id="box" class="ps-0 d-flex justify-content-start me-3 mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-11.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-12.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-13.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">Be The Young</p>
+                </div>
             </div>
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-1.jpg"
-                alt="Img 1"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2" style="background-color: #2c2c2c">
-                Brani che ti piacciono!
-              </p>
+            <div id="box" class="ps-0 d-flex justify-content-start mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-6.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-7.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-8.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-9.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">Only Good Vibes</p>
+                </div>
             </div>
-          </div>
-          <!-- Seconda riga con row -->
-          <div class="row mt-2">
-            <!-- contenuto generato dinamicamente
-            strutturato per card con col 3 e 9 -->
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-4.jpg"
-                alt="Img 4"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2 pe-2" style="background-color: #2c2c2c">
-                La tua playlist House!
-              </p>
+            <div id="box" class="ps-0 d-flex justify-content-start me-3 mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-2.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-3.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-4.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-5.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">early stage emily syndrome (sett-ott 2022)</p>
+                </div>
             </div>
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-5.jpg"
-                alt="Img 5"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2" style="background-color: #2c2c2c">
-                La tua playlist Metal!
-              </p>
+            <div id="box" class="ps-0 d-flex justify-content-start me-3 mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-14.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-15.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-16.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-17.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">2021 LOL</p>
+                </div>
             </div>
-            <div class="col d-flex">
-              <img
-                src="assets/imgs/main/image-6.jpg"
-                alt="Img 6"
-                height="45px"
-                width="45px"
-              />
-              <p class="fs-5 p-2" style="background-color: #2c2c2c">
-                Brani che ti piacciono!
-              </p>
+            <div id="box" class="ps-0 d-flex justify-content-start mb-3"><!-- contenitore playlist -->
+                <div id="images" class="d-flex ">
+                  <div>
+                  <img src="assets/imgs/main/image-2.jpg" class="img-fluid" style="border-top-left-radius: 5px;">
+                  <img src="assets/imgs/main/image-3.jpg" class="img-fluid"  style="border-bottom-left-radius: 5px;"></div>
+                  <div>
+                  <img src="assets/imgs/main/image-4.jpg" class="img-fluid">
+                  <img src="assets/imgs/main/image-5.jpg" class="img-fluid"></div>
+                </div>
+                <div class="col ps-2 d-flex align-items-center names">
+                  <p class="m-0">Deep Dive</p>
+                </div>
             </div>
-          </div>
-
-          <!-- sezione card album -->
-
+          </div>   
+          <!-- SEZIONE CON LE CARD DEI CARI ARTISTI E RELATIVI ALBUM *********--> 
           <div>
-            <span>Altro di ciò che ti piace</span>
-            <div class="row">
-              <!-- CARD UNO -->
-              <div class="col mt-4">
-                <div class="card" style="width: 9rem">
-                  <img
-                    src="assets/imgs/main/image-7.jpg"
-                    class="card-img-top"
-                    alt="Img7"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title">Hot Hits Italia</h6>
-                    <p class="card-text">Some quick example text</p>
-                  </div>
-                </div>
-              </div>
-              <!-- CARD DUE -->
-              <div class="col mt-4">
-                <div class="card" style="width: 9rem">
-                  <img
-                    src="assets/imgs/main/image-8.jpg"
-                    class="card-img-top"
-                    alt="Img8"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title">Hot Hits Italia</h6>
-                    <p class="card-text">Some quick example text</p>
-                  </div>
-                </div>
-              </div>
-              <!-- CARD TRE -->
-              <div class="col mt-4">
-                <div class="card" style="width: 9rem">
-                  <img
-                    src="assets/imgs/main/image-9.jpg"
-                    class="card-img-top"
-                    alt="Img9"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title">Hot Hits Italia</h6>
-                    <p class="card-text">Some quick example text</p>
-                  </div>
-                </div>
-              </div>
-              <!-- CARD QUATTRO -->
-              <div class="col mt-4">
-                <div class="card" style="width: 9rem">
-                  <img
-                    src="assets/imgs/main/image-10.jpg"
-                    class="card-img-top"
-                    alt="Img10"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title">Hot Hits Italia</h6>
-                    <p class="card-text">Some quick example text</p>
-                  </div>
-                </div>
-              </div>
-              <!-- CARD CINQUE -->
-              <div class="col mt-4">
-                <div class="card" style="width: 9rem">
-                  <img
-                    src="assets/imgs/main/image-11.jpg"
-                    class="card-img-top"
-                    alt="Img11"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title">Hot Hits Italia</h6>
-                    <p class="card-text">Some quick example text</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <span>Visualizza tutto</span>
-          </div>
-          <div class="row">
+            <h5 class="my-3">Altro di ciò che ti piace</h5>
+          <div class="row flex-wrap m-0 " id="mainRow">
             <!--  card con leggero padding -->
           </div>
         </section>
-        <aside id="aside2" ></aside>
+        <aside id="aside2" class=" px-2 pt-2 bg-black" >
+          <div
+          id="activityCol"
+          class="d-none"
+        >
+          <div class="d-flex justify-content-between align-items-center mt-0 mb-5">
+              <h6 class="text-white m-0 flex-grow-1 ">Attività amici</h6>
+              <i style="font-size: 1.2em" class="mx-2 bi bi-person-plus"></i>
+              <i
+                style="font-size: 1em"
+                class="bi bi-x-lg"
+                onclick="closeFriendsPage(event)"
+              ></i>
+            </div>
+          <div class="row mt-5">
+            <div
+              class="col-12 d-flex justify-content-between mb-4 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/1.jpg"
+                    width="30"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Giorgio Migliaccio</p>
+                  <p class="m-0 music">In camera - Yumi Zouma</p>
+                </div>
+              </div>
+              <div>
+                <p class="time">2 ore</p>
+              </div>
+            </div>
+            <div
+              class="col-12 d-flex justify-content-between mb-4 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/2.jpg"
+                    width="30"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Marissa Burca</p>
+                  <p class="m-0 music">Aimed to Kill - Jade LeMac</p>
+                </div>
+              </div>
+              <div>
+                <p class="time">5 ore</p>
+              </div>
+            </div>
+            <div
+              class="col-12 d-flex justify-content-between mb-4 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/3.jpg"
+                    width="30"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Riccardo Di Bari</p>
+                  <p class="m-0 music">New Kings - Sleeping wolf</p>
+                </div>
+              </div>
+              <div>
+                <p class="time">8 ore</p>
+              </div>
+            </div>
+            <div
+              class="col-12  d-flex justify-content-between mb-5 text-secondary-emphasis"
+            >
+              <div class="d-flex">
+                <div class="me-3">
+                  <img
+                    src="./assets/profile/4.jpg"
+                    width="30"
+                    class="rounded-5"
+                    alt="img-1"
+                  />
+                </div>
+                <div class="me-3">
+                  <p class="m-0 fw-bold">Vincenzo Melillo</p>
+                  <p class="m-0 music">Rebirth - Aaron Hibell</p>
+                </div>
+              </div>
+              <div>
+                <p class="time">1 giorno</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        </aside>
       </div>
     </main>
     <script
