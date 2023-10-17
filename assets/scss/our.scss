@@ -408,5 +408,238 @@ nav{
   z-index:1;
   background-color: black;
 }
+
+/* css del player  */ 
+
+footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 101;
+  }
+  
+  #player-spotify {
+    background-color: rgb(18, 18, 18);
+    padding: 2rem 2rem;
+    color: white;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+  }
+  #player-spotify button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  #cover-player {
+    height: 70px;
+    width: 70px;
+    border-radius: 3px;
+    margin-right: 15px;
+  }
+  
+  #text-player {
+    margin-right: 15px;
+  }
+  
+  #container_heart-placeholder {
+    display: flex;
+    align-items: center;
+  }
+  
+  #heart-player {
+    font-size: 1.3rem;
+    color: white;
+  }
+  #heart-player .bi-heart-fill {
+    color: rgb(30, 215, 96);
+  }
+  #heart-player:hover {
+    color: white;
+    cursor: pointer;
+  }
+  
+  #sub-test_player {
+    color: rgb(188, 188, 188);
+  }
+  
+  #controls_player {
+    font-size: 1.7rem;
+    position: relative;
+  }
+  
+  #filled-bar {
+    display: flex;
+  }
+  
+  #container_filler-bar {
+    display: inline-flex;
+    height: 8px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: rgb(188, 188, 188);
+    position: relative;
+  }
+  
+  #filler_bar-time {
+    position: absolute;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  #filler_bar-time:hover {
+    background-color: rgb(30, 215, 96);
+  }
+  
+  .animation_filler-bar {
+    -webkit-animation: progress-animation 30s linear;
+            animation: progress-animation 30s linear;
+  }
+  
+  .started-animation_filler-bar {
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+  }
+  
+  .paused-animation_filler-bar {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  
+  #customRange1 {
+    width: 60px;
+    margin-right: 20px;
+    margin-left: -10px !important;
+  }
+  
+  #player_right-side i {
+    margin-right: 1rem;
+  }
+  
+  #btn_play-pause--audio {
+    color: white;
+    font-size: 130%;
+  }
+  
+  i:hover {
+    cursor: pointer;
+  }
+  
+  .bi-shuffle,
+  .bi-skip-start-fill,
+  .bi-skip-end-fill,
+  .bi-repeat {
+    color: rgb(188, 188, 188);
+  }
+  .bi-shuffle:hover,
+  .bi-skip-start-fill:hover,
+  .bi-skip-end-fill:hover,
+  .bi-repeat:hover {
+    color: white;
+  }
+  
+  .bi-shuffle,
+  .bi-repeat {
+    font-size: 80%;
+  }
+  
+  .btn_colorize-green {
+    color: rgb(30, 215, 96) !important;
+  }
+  
+  #player_right-side {
+    position: relative;
+  }
+  #player_right-side button {
+    color: rgb(188, 188, 188);
+  }
+  #player_right-side button i {
+    font-size: 1.1rem;
+  }
+  #player_right-side button:hover {
+    color: white;
+  }
+  #player_right-side #modal_control-device {
+    position: absolute;
+    top: -418px;
+    background-color: #121212;
+    border-radius: 3px;
+    font-size: 0.3rem;
+    padding: 1.5rem;
+    line-height: 1.5;
+    min-width: 350px;
+    right: 16px;
+  }
+  #player_right-side #modal_control-device i {
+    font-size: 1.6rem;
+    color: rgb(188, 188, 188);
+  }
+  #player_right-side #modal_control-device p {
+    color: rgb(188, 188, 188);
+  }
+  #player_right-side #modal_control-device h4 {
+    font-size: 0.9rem;
+  }
+  #player_right-side #current_device,
+  #player_right-side #control_wifi,
+  #player_right-side #control_another-device,
+  #player_right-side #control_speaker,
+  #player_right-side #error_device {
+    display: flex !important;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  #player_right-side #current_device i,
+  #player_right-side #current_device p {
+    color: rgb(30, 215, 96);
+  }
+  #player_right-side #modal-sub {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #player_right-side #modal-sub i {
+    font-size: 1rem;
+  }
+  #player_right-side #square-rotate {
+    height: 40px;
+    width: 30px;
+    background-color: #121212;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 45%;
+    bottom: -10px;
+  }
+  #player_right-side #container_heart-placeholder {
+    position: relative;
+  }
+  
+  @-webkit-keyframes progress-animation {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes progress-animation {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
 /* ************++ */
 @import "./bootstrap.scss";

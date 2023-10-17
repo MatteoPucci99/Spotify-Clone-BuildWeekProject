@@ -389,10 +389,160 @@
         </div>
       </div>
     </div>
-
-        </aside>
-      </div>
+    </aside>
+    </div>
     </main>
+    <footer id="footer">
+      <div
+        class="d-flex justify-content-between align-items-center position-sticky bottom-0"
+        id="player-spotify"
+      >
+        <div class="d-flex justify-content-around">
+          <div>
+            <img
+              id="cover-player"
+              src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
+              alt=""
+            />
+          </div>
+          <div id="text-player">
+            <h4 id="title-song">Stairway to Heaven</h4>
+            <p id="sub-test_player">
+              <a
+                href="artist.html"
+                onclick='localStorage.setItem("id_artist", 848)'
+                >Led Zeppelin</a
+              >
+            </p>
+          </div>
+
+          <button id="heart-player" onclick="selectedHeart()">
+            <i class="bi bi-heart d-flex" id="heart"></i>
+            <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
+          </button>
+        </div>
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <div id="controls_player">
+            <div id="modal-placeholder" class="d-none">
+              <p>
+                <span id="replace-txt-added" class="d-none">Added to</span
+                ><span id="replace-txt-removed" class="">Removed from</span>
+                liked songs
+              </p>
+            </div>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-shuffle icons-play"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-skip-start-fill icons-play"></i>
+            </button>
+            <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
+              <i class="bi bi-play-circle-fill" id="btn_play"></i>
+              <i class="bi bi-pause-circle d-none" id="btn_pause"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-skip-end-fill icons-play"></i>
+            </button>
+            <button onclick="selectedBtnAudioColorizeGreen(this)">
+              <i class="bi bi-repeat icons-play"></i>
+            </button>
+          </div>
+
+          <div id="filler-bar">
+            <span id="progress-time">0:00</span>
+
+            <span id="container_filler-bar">
+              <span id="filler_bar-time"></span>
+            </span>
+
+            <span id="duration-time">0:30</span>
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-end align-items-center"
+          id="player_right-side"
+        >
+          <button class="iconPlayer"><i class="bi bi-mic"></i></button>
+          <button class="iconPlayer"><i class="bi bi-list"></i></button>
+
+          <div>
+            <div class="d-none" id="modal_control-device">
+              <div id="current_device">
+                <div>
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <div>
+                  <h3>Current device</h3>
+                  <p>This computer</p>
+                </div>
+              </div>
+              <div id="error_device">
+                <h4>No other device found</h4>
+              </div>
+              <div id="control_wifi">
+                <div><i class="bi bi-wifi"></i></div>
+                <div>
+                  <h4>check your WiFi</h4>
+                  <p>Connect the devices you are using to the same WiFi.</p>
+                </div>
+              </div>
+              <div id="control_another-device">
+                <div><i class="bi bi-pc-display"></i></div>
+                <div>
+                  <h4>Play from an other device.</h4>
+                  <p>It will automatically appear here.</p>
+                </div>
+              </div>
+              <div id="control_speaker">
+                <div><i class="bi bi-power"></i></div>
+                <div>
+                  <h4>Restart your speaker</h4>
+                  <p>Or follow setup instructions if it's a new device</p>
+                </div>
+              </div>
+              <div id="modal-sub">
+                <h4>Don't see your device?</h4>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </div>
+
+              <div id="square-rotate"></div>
+            </div>
+            <button>
+              <i
+                class="bi bi-pc-display-horizontal"
+                onclick="selectedModalControlDevic()"
+              ></i>
+            </button>
+          </div>
+
+          <button
+            id="btn_mute-audio"
+            onclick="selectedBtnMuteAudio(), mutedAudio()"
+          >
+            <i class="bi bi-volume-up" id="btn_volume-up"></i>
+            <i class="bi bi-volume-mute d-none" id="btn_volume-mute"></i>
+          </button>
+          <input
+            type="range"
+            class="form-range"
+            id="volume"
+            max="1"
+            min="0"
+            step="0.01"
+            onchange="changeVolume(this.value)"
+          />
+          <button class="iconPlayer" onclick="espandi()">
+            <i class="bi bi-arrows-angle-expand"></i>
+          </button>
+        </div>
+        <audio
+          class="player"
+          src="https://cdns-preview-0.dzcdn.net/stream/c-00bd440c9ec8b85f26d638febfda5e7c-6.mp3"
+        ></audio>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
