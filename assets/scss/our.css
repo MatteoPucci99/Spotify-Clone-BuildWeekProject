@@ -87,10 +87,12 @@ section {
 
 #aside1 {
   width: 20%;
+  height: 100vh;
 }
 
 #section {
   width: 65%;
+  height: 100vh;
 }
 
 #aside2 {
