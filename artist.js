@@ -51,13 +51,13 @@ const contentCol = document.getElementById("contentCol");
 const closeFriendsPage = (e) => {
   // console.log(activityCol);
   activityCol.classList.add("d-none");
-  contentCol.classList.remove("d-none", "d-md-none", "d-lg-block", "col-lg-7");
-  contentCol.classList.add("col-lg-9");
+  contentCol.classList.remove("d-none", "d-md-none", "d-lg-block", "col-lg-8");
+  contentCol.classList.add("col-lg-10");
 };
 
 const openFriendsPage = (e) => {
   // console.log(e.target);
   activityCol.classList.remove("d-none");
-  contentCol.classList.remove("col-lg-9");
-  contentCol.classList.add("d-none", "d-md-none", "d-lg-block", "col-lg-7");
+  contentCol.classList.remove("col-lg-10");
+  contentCol.classList.add("d-none", "d-md-none", "d-lg-block", "col-lg-8");
 };
