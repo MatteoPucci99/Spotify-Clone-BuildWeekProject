@@ -131,6 +131,11 @@ section {
   font-size: 0.8em;
 }
 
+@media screen and (max-width: 1098px) {
+  #box {
+    width: 48%;
+  }
+}
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
