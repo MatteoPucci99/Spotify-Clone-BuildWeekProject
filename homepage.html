@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/scss/our.css">
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <aside id="aside1" ></aside>
+        <section id="section" class="px-5">
+          <div class="row pt-4 pb-2 justify-content-between mx-0">
+            <div class="col-2 px-0 justify-content-start text-body-tertiary">
+              <i class="fas fa-chevron-circle-left pe-3 fa-lg"></i>
+              <i class="fas fa-chevron-circle-right fa-lg"></i>
+            </div>
+            <div class="col-10 d-flex justify-content-end pe-0">
+              <div class="rounded-pill bg-black pe-2">
+                <img
+                  src="assets/imgs/search/image-51.jpg"
+                  height="25px"
+                  class="rounded-circle me-1"
+                /><span class="me-3">Mood Booster...</span
+                ><i class="fas fa-caret-down"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Sezione dell'album in evidenza -->
+          <div class="row py-3 align-items-center mx-0 here">
+            <div class="col-4">
+              <img src="assets/imgs/main/image-1.jpg" class="img-fluid" />
+            </div>
+            <div id="album" class="col-6 flex-grow-1">
+              <p class="mb-1">ALBUM</p>
+              <p class="text-secondary pe-2 mb-1 text-end">NASCONDI ANNUNCI</p>
+              <h1 class="display-3">BRANO</h1>
+              <p>Artisti</p>
+              <p>suggerimento</p>
+              <button class="rounded-pill btn btn-success py-2 px-4 me-3 text-black">
+                Play</button
+              ><button class="rounded-pill btn btn-dark py-2 px-4 me-4">Salva</button
+              ><i class="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
+          <!-- sezione delle playlist -->
+          <h3 class="py-4">Buonasera</h3>
+          <div class="row">
+            <!-- contenuto generato dinamicamente
+            strutturato per card con col 3 e 9 -->
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-2.jpg"
+                alt="Img 2"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
+                La tua playlist Rock!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-3.jpg"
+                alt="Img 3"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-4" style="background-color: #2c2c2c">
+                La tua playlist Pop!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-1.jpg"
+                alt="Img 1"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                Brani che ti piacciono!
+              </p>
+            </div>
+          </div>
+          <!-- Seconda riga con row -->
+          <div class="row mt-2">
+            <!-- contenuto generato dinamicamente
+            strutturato per card con col 3 e 9 -->
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-4.jpg"
+                alt="Img 4"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2 pe-2" style="background-color: #2c2c2c">
+                La tua playlist House!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-5.jpg"
+                alt="Img 5"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                La tua playlist Metal!
+              </p>
+            </div>
+            <div class="col d-flex">
+              <img
+                src="assets/imgs/main/image-6.jpg"
+                alt="Img 6"
+                height="45px"
+                width="45px"
+              />
+              <p class="fs-5 p-2" style="background-color: #2c2c2c">
+                Brani che ti piacciono!
+              </p>
+            </div>
+          </div>
+
+          <!-- sezione card album -->
+
+          <div>
+            <span>Altro di ciò che ti piace</span>
+            <div class="row">
+              <!-- CARD UNO -->
+              <div class="col mt-4">
+                <div class="card" style="width: 9rem">
+                  <img
+                    src="assets/imgs/main/image-7.jpg"
+                    class="card-img-top"
+                    alt="Img7"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Hot Hits Italia</h6>
+                    <p class="card-text">Some quick example text</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD DUE -->
+              <div class="col mt-4">
+                <div class="card" style="width: 9rem">
+                  <img
+                    src="assets/imgs/main/image-8.jpg"
+                    class="card-img-top"
+                    alt="Img8"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Hot Hits Italia</h6>
+                    <p class="card-text">Some quick example text</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD TRE -->
+              <div class="col mt-4">
+                <div class="card" style="width: 9rem">
+                  <img
+                    src="assets/imgs/main/image-9.jpg"
+                    class="card-img-top"
+                    alt="Img9"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Hot Hits Italia</h6>
+                    <p class="card-text">Some quick example text</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD QUATTRO -->
+              <div class="col mt-4">
+                <div class="card" style="width: 9rem">
+                  <img
+                    src="assets/imgs/main/image-10.jpg"
+                    class="card-img-top"
+                    alt="Img10"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Hot Hits Italia</h6>
+                    <p class="card-text">Some quick example text</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD CINQUE -->
+              <div class="col mt-4">
+                <div class="card" style="width: 9rem">
+                  <img
+                    src="assets/imgs/main/image-11.jpg"
+                    class="card-img-top"
+                    alt="Img11"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Hot Hits Italia</h6>
+                    <p class="card-text">Some quick example text</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span>Visualizza tutto</span>
+          </div>
+          <div class="row">
+            <!--  card con leggero padding -->
+          </div>
+        </section>
+        <aside id="aside2" ></aside>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/homepage.js"></script>
+  </body>
+</html>
