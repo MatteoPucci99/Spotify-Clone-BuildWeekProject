@@ -431,7 +431,7 @@ footer {
 }
 
 #heart-player {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: white;
 }
 #heart-player .bi-heart-fill {
@@ -640,10 +640,15 @@ $grid-breakpoints: (
   visibility:hidden;
 }
 #altro{
-  visibility:visible;
+  display:block;
  }
+#main-footer{
+  display: block;
+}
+#secondary-footer{
+  display: none;
 
-
+}
 /* BREAKPOINT PER VERSIONE MOBILE COM MAX-WITH DI 910PX */
 
 
@@ -688,9 +693,32 @@ $grid-breakpoints: (
     
   }
   #altro{
-   visibility:hidden;
+   display: none;
   }
-
+  #main-footer{
+    display: none;
+  }
+  #player-spotify{
+    padding: 0.5rem 0.5rem;
+    height:45%;
+    border-radius: 10px;
+    background-color: rgba(31, 33, 36, 0.975);
+  }
+  #secondary-footer{
+    display:block;
+    width: 75%;
+    height:150px;
+  }
+  #tofix{
+    width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #newMenu{
+   height:70%;
+   background: linear-gradient(to top,black,rgba(0, 0, 0, 0.931))
+  }
 }
 
 /* ************++ */

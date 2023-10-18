@@ -288,9 +288,8 @@
             </div>
           </div>   
           <!-- SEZIONE CON LE CARD DEI VARI ARTISTI E RELATIVI ALBUM *********--> 
-          <div>
-            <div class="d-flex align-items-center justify-content-between"  id="altro">
-            <h5 class="my-3 d-inline ">Altro di ciò che ti piace</h5><span class="out text-secondary">VISUALIZZA TUTTO</span>
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="my-3 " id="altro">Altro di ciò che ti piace</h5><span id="altro" class="out text-secondary">VISUALIZZA TUTTO</span>
             </div>
           <div class="row flex-wrap justify-content-center m-0 " id="mainRow">
             <!--  card con leggero padding -->
@@ -403,6 +402,7 @@
     </div>
     </main>
     <footer id="footer" class="row">
+      <div id="main-footer">
       <div
         class="d-flex justify-content-between align-items-center position-sticky bottom-0 p-3"
         id="player-spotify"
@@ -553,6 +553,102 @@
           class="player"
           src="https://cdns-preview-0.dzcdn.net/stream/c-00bd440c9ec8b85f26d638febfda5e7c-6.mp3"
         ></audio>
+      </div>
+    </div>
+      <!-- footer secondario -->
+      <div id="secondary-footer" class="mx-auto">
+        <div id="player-spotify">
+         <div class="row px-3 align-items-center">
+          <div class="col-2 ps-1">
+            <img
+              id="cover-player"
+              src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
+              alt=""
+              widht="50px"
+              height="50px"
+              class="rounded-5 "
+            />
+          </div>
+          <div class="col-4 flex-grow-1" id="tofix">
+            <span id="title-song" class="mb-0" >Stairway to Heaven</span>
+            <span id="sub-test_player">
+              <a
+                href="artist.html"
+                onclick='localStorage.setItem("id_artist", 848)'
+                >Led Zeppelin</a
+              >
+            </span>
+          </div>
+          <div class="col-1">
+            <i
+                class="bi bi-pc-display-horizontal"
+              ></i>
+          </div>
+          <div class="col-2">
+            <button id="heart-player" onclick="selectedHeart()" class="col-2">
+              <i class="bi bi-heart d-flex " id="heart"></i>
+              <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
+            </button>
+          </div>
+          <div class="col-1">
+            <i class="bi bi-play-circle-fill"></i>
+          </div>
+         </div>
+         </div>
+         <!-- menu in footer -->
+         <div class="row mx-auto align-items-center" id="newMenu">
+          <div class="col-4 text-center">
+            <div id="icon-home">
+              <a href="home.html" class="text-decoration-none">
+                <img
+                  class="icon-home-side"
+                  src="assets/imgs/icone/sidebar_home.png"
+                  alt=""
+                />
+                <img
+                  class="icon-home-side-hide"
+                  src="assets/imgs/icone/sidebar_home_hover.png"
+                  alt=""
+                />
+                Home
+              </a>
+            </div>
+          </div>
+          <div class="col-4 text-center">
+            <div id="icon-search">
+              <a href="search.html" class="text-decoration-none">
+                <img
+                  class="icon-home-side"
+                  src="assets/imgs/icone/sidebar_search.png"
+                  alt=""
+                />
+                <img
+                  class="icon-home-side-hide"
+                  src="assets/imgs/icone/sidebar_search_hover.png"
+                  alt=""
+                />
+                Cerca
+              </a>
+            </div>
+          </div>
+          <div class="col-4 text-center">
+            <div id="icon-library">
+              <a href="#" class="text-decoration-none">
+                <img
+                  class="icon-home-side"
+                  src="assets/imgs/icone/sidebar_library.png"
+                  alt=""
+                />
+                <img
+                  class="icon-home-side-hide"
+                  src="assets/imgs/icone/sidebar_library_hover.png"
+                  alt=""
+                />
+                La tua libreria
+              </a>
+            </div>
+          </div>
+         </div>
       </div>
     </footer>
     <script
