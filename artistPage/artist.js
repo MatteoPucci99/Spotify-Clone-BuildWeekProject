@@ -1,7 +1,7 @@
 // RINTRACCIO L'ID DALLA BARRA DI RICERCA
 const addressBarContent = new URLSearchParams(location.search);
-const albumId = addressBarContent.get("albumId");
-console.log(albumId);
+const artistId = addressBarContent.get("artistId");
+console.log(artistId);
 
 // RINTRACCIO L'ID DELLA MAIN ROW
 const mainRow = document.getElementById("albumContent");
@@ -51,27 +51,12 @@ const calculateAverageColor = (imageData) => {
 // FUNCTION PER GENERARE ALBUM DETAILS
 const generateDetails = (details) => {
   secondRow.innerHTML = `
-  <div class="d-flex justify-content-center mt-4">
-    <img src="${
-      details.cover_big
-    }" crossorigin="anonymous" alt="img" width="70%" id="myImg"/>
-  </div>
-  <div class="d-flex flex-column justify-content-end">
-    <h1 class="mt-4 fs-md-4">${details.title}</h1>
-    <div class="d-flex align-items-center">
-      <img
-        src="${details.artist.picture_big}"
-        width="10%"
-        class="rounded-5 me-2"
-        alt="img"
-      
-      <p class="ms-2 mb-0 d-flex align-items-center">${details.artist.name}</p>
-      <p class="ms-2 mb-0 d-flex align-items-center">${
-        details.tracks.data.length
-      } brani</p>
-      <p class="ms-2 mb-0 d-flex align-items-center">${Math.floor(
-        details.duration / 60
-      )}:${details.duration % 60} </p>
+  <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-start mt-4">
+    <img src="${details.picture_big}" crossorigin="anonymous" alt="img" width="70%" id="myImg"/>
+
+    <div class="d-flex flex-column justify-content-end">
+      <h1 class="mt-4 display-3 ms-3 fs-md-4">${details.name}</h1>
+  
     </div>
   </div>
   `;
@@ -91,30 +76,30 @@ const generateDetails = (details) => {
   const bgContent = document.getElementById("bgContent");
   bgContent.style.backgroundColor = "rgba(0,0,0, 0.2)";
 
-  const currentHeight = bgContent.offsetHeight;
-  if (currentHeight < window.innerHeight) {
-    bgContent.style.height = "100vh";
-  }
+  //   const currentHeight = bgContent.offsetHeight;
+  //   if (currentHeight < window.innerHeight) {
+  //     bgContent.style.height = "100vh";
+  //   }
 };
 
 // FUNCTION PER GENERARE LE TRACKS
 const generateTracks = (tracks) => {
-  tracks.tracks.data.forEach((el) => {
-    let seconds = el.duration % 60;
-    seconds = seconds.toString().padStart(2, "0");
-    const options = {
-      style: "decimal",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2,
-    };
+  tracks.data.forEach((el, index) => {
+    if (index < 20) {
+      let seconds = el.duration % 60;
+      seconds = seconds.toString().padStart(2, "0");
+      const options = {
+        style: "decimal",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+      };
 
-    const content = document.createElement("div");
-    content.classList.add("d-flex", "align-items-center");
-    content.innerHTML = `
+      const content = document.createElement("div");
+      content.classList.add("d-flex", "align-items-center");
+      content.innerHTML = `
     <div class="col col-md-8 d-flex justify-content-between">
        <div>
-         <h6 class="mb-0">${el.title}</h6>
-         <p class='text-secondary'>${el.artist.name}</p>
+         <h6 class="mb-4 pe-3">${el.title}</h6>
        </div>
        <div class="d-flex align-items-center">
          <i
@@ -133,11 +118,13 @@ const generateTracks = (tracks) => {
           )}:${seconds}</p>
         </div>
     `;
-    mainRow.appendChild(content);
+
+      mainRow.appendChild(content);
+    }
   });
 };
 
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
   .then((res) => {
     if (res.ok) {
       return res.json();
@@ -146,9 +133,25 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     }
   })
   .then((data) => {
-    console.log("Tracks", data);
-    generateTracks(data);
+    console.log("Artisti:", data);
     generateDetails(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+fetch(`
+  https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=50`)
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error("Errore");
+    }
+  })
+  .then((data) => {
+    console.log("Artisti:", data);
+    generateTracks(data);
   })
   .catch((err) => {
     console.log(err);

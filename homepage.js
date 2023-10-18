@@ -49,7 +49,7 @@ const generateCards = (album) => {
             
             </div>
             <div>
-            <p class="card-text"> <a class="text-white" href="#">${el.artist.name}</a></p>
+            <p class="card-text"> <a class="text-white" href="/artistPage/artist.html?artistId=${el.artist.id}">${el.artist.name}</a></p>
             
             </div>
             
@@ -75,7 +75,7 @@ const generateSecondCards = (album) => {
             
             </div>
             <div>
-            <p class="card-text"> <a class="text-white" href="#">${el.artist.name}</a></p>
+            <p class="card-text"> <a class="text-white" href="/artistPage/artist.html?artistId=${el.artist.id}">${el.artist.name}</a></p>
             
             </div>
             
