@@ -24,12 +24,12 @@
             <div id="left">
                 <nav class="border-bottom pt-2">
                   <div id="menu_principale ">
-                    <ul class="list-unstyled pb-4">
+                    <ul class="list-unstyled pb-4 ">
                       <li><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-three-dots text-white" viewBox="0 0 16 16">
                         <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                       </svg></li>
                       <li id="icon-home">
-                        <a href="home.html" class="text-decoration-none">
+                        <a href="homepage.html" class="text-decoration-none">
                           <img
                             class="icon-home-side"
                             src="assets/imgs/icone/sidebar_home.png"
@@ -141,31 +141,16 @@
                   <li><a href=""></a>Around the world 🌍</li>
                 </ul>
               </div>
-          </div>
         </aside>
         <section id="section" class="px-5">
-          <!-- PULSANTI PER APERTURA DEGLI ASIDE  **********************+ -->
-          <div id="amici" class="row">
-            <div class="col-12 d-flex justify-content-end mt-2">
-              <i
-                class="bi bi-bell me-3 d-flex align-items-center"
-                style="font-size: 1.2em"
-              ></i>
-              <i
-                class="bi bi-people me-3"
-                onclick="openFriendsPage(event)"
-                style="font-size: 1.2em"
-              ></i>
-              <i class="bi bi-person" style="font-size: 1.2em"></i>
-            </div>
-          </div>
           <!-- INIZIO CORPO SECTION **************************** -->
           <div id="adv" class="row pt-2 pb-3 justify-content-between align-items-center mx-0">
             <div class="col-4 px-0 justify-content-start text-body-tertiary">
-              <i class="fas fa-chevron-circle-left pe-3 fa-2x"><a href="homepage.html"></a></i>
+              <i class="fas fa-chevron-circle-left pe-3 fa-2x"></i>
               <i class="fas fa-chevron-circle-right fa-2x"></i>
             </div>
             <div class="col-8 d-flex justify-content-end pe-0">
+               
               <div class="rounded-pill bg-black pe-2">
                 <img
                   src="assets/imgs/search/image-51.jpg"
@@ -174,6 +159,11 @@
                 /><span class="me-3 smaller">Mood Booster...</span
                 ><i class="fas fa-caret-down"></i>
               </div>
+              <i
+                class="bi bi-people ms-3"
+                onclick="openFriendsPage(event)"
+                style="font-size: 1.2em"
+              ></i>
             </div>
           </div>
           <!-- SEZIONE ALBUM SPONSORIZZATO ************************* -->
@@ -291,14 +281,13 @@
           <div class="d-flex align-items-center justify-content-between">
             <h5 class="my-3 " id="altro">Altro di ciò che ti piace</h5><span id="altro" class="out text-secondary">VISUALIZZA TUTTO</span>
             </div>
-          <div class="row flex-wrap justify-content-center m-0 " id="mainRow">
+          <div class="row flex-wrap justify-content-center m-0 mb-5 " id="mainRow">
             <!--  card con leggero padding -->
           </div>
         </section>
         <aside id="aside2" class="px-2 pt-2 bg-black" >
           <div
           id="activityCol"
-          class="d-none"
         >
           <div class="d-flex justify-content-between align-items-center mt-0 mb-5">
               <h6 class="text-white m-0 flex-grow-1 ">Attività amici</h6>
@@ -404,7 +393,7 @@
     <footer id="footer" class="row mx-0">
       <div id="main-footer">
       <div
-        class="row d-flex justify-content-between align-items-center position-sticky bottom-0 p-3"
+        class="row d-flex justify-content-between align-items-center bottom-0"
         id="player-spotify"
       >
         <div class="col-3 d-flex align-items-center " id="footer1">
@@ -557,7 +546,7 @@
       </div>
     </div>
       <!-- footer secondario -->
-      <div id="secondary-footer" class="mx-auto">
+      <div id="secondary-footer" class="p-0">
         <div id="player-spotify" class="mx-3">
          <div class="row px-3 align-items-center">
           <div class="col-2 ps-1">

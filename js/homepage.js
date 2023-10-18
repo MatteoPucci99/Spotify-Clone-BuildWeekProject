@@ -19,7 +19,6 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=hiphop")
 
 // FUNCTION PER GENERARE LE CARDS
 
-
 /* card per screem grande */
 
 const generateCards = (album) => {
@@ -32,10 +31,10 @@ const generateCards = (album) => {
         <img src="${el.album.cover_big}" class="card-img-top img-fluid" alt="img-${index}">
         <div class="card-body d-flex flex-column justify-content-between px-0">
             <div>
-            <h6 class="card-title"><a class="text-decoration-none text-white" href="/albumPage/album.html?albumId=${el.album.id}">${el.album.title}</a></h6>
+            <h6 class="card-title"><a class="text-decoration-none text-white" href="album.html?albumId=${el.album.id}">${el.album.title}</a></h6>
             </div>
             <div>
-            <p class="card-text"> <a class="text-white" href="#">${el.artist.name}</a></p>
+            <p class="card-text"> <a class="text-white" href="artist.html?artistId=${el.artist.id}">${el.artist.name}</a></p>
             
             </div>
             
@@ -47,7 +46,6 @@ const generateCards = (album) => {
   });
 };
 
-
 // RINTRACCIO LA COL TARGET
 const activityCol = document.getElementById("activityCol");
 const contentCol = document.getElementById("section");
@@ -56,16 +54,15 @@ const aside2 = document.getElementById("aside2");
 const closeFriendsPage = (e) => {
   // console.log(activityCol);
   activityCol.classList.add("d-none");
-  activityCol.classList.remove("new-width2");
-  contentCol.classList.remove("new-width");
+  activityCol.classList.add("new-width2");
+  contentCol.classList.add("new-width");
 };
 
 const openFriendsPage = (e) => {
   // console.log(e.target);
   activityCol.classList.remove("d-none");
-  activityCol.classList.add("new-width2");
-  contentCol.classList.add("new-width");
-  aside2.classList.add("new-width2");
+  activityCol.classList.remove("new-width2");
+  contentCol.classList.remove("new-width");
 };
 
 /* LOGICA PLAYER */
@@ -222,6 +219,3 @@ function mutedAudio() {
     audioState = false;
   }
 }
-
-/*  FUNZIONE PER MEDIA SCREEN */
-
