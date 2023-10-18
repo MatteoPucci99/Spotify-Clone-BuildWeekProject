@@ -653,7 +653,8 @@ $grid-breakpoints: (
 
 }
 #cover-player{
-  width:60%
+  width:60%;
+  min-width:50px;
 }
 
 /* BREAKPOINT PER VERSIONE MOBILE COM MAX-WITH DI 910PX */
@@ -710,11 +711,11 @@ $grid-breakpoints: (
     padding: 0.5rem 0.5rem;
     height:45%;
     border-radius: 10px;
-    background-color: rgba(31, 33, 36, 0.975);
+    background-color: rgba(31, 33, 36, 0.948);
   }
   #secondary-footer{
     display:block;
-    width: 75%;
+    width: 78%;
     height:150px;
     position:fixed;
     bottom: 0;
