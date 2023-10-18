@@ -70,11 +70,13 @@
 
 body {
   font-family: "Circular", sans-serif;
+  height: 10vh;
+  min-width: 910px;
 }
 section {
   background: linear-gradient(to top, rgb(19, 19, 19), rgb(30, 30, 30));
   overflow-y: scroll;
-  height:100vh;
+  height: 100vh;
 }
 
 .here {
@@ -89,7 +91,7 @@ section {
 #album p {
   font-size: 0.8rem;
   font-weight: 700;
-  line-height: 0.6;
+  line-height: 1em;
 }
 #album p:nth-of-type(2) {
   font-size: 0.6rem;
@@ -98,8 +100,9 @@ section {
 }
 #aside1 {
   width: 25%;
-  position:relative;
-  height:100vh;
+  min-width: 25%;
+  position: relative;
+  height: 100vh;
 }
 #section {
   width: 75%;
@@ -127,31 +130,27 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 }
 #box {
   width: 31%;
+  height: 50%;
   border-radius: 5px;
   background-color: rgb(40, 40, 40);
 }
 #images {
   width: 25%;
+  
 }
 .names {
   font-size: 0.8em;
 }
 
-@media screen and (max-width: 1098px) {
-  #box {
-    width: 48%;
-  }
+.smaller {
+  font-size: 0.8rem;
 }
-
-.smaller{
-  font-size:0.8rem;
-}
-.out{
+.out {
   font-size: 0.8em;
 }
 
-#playlist ul li{
-  width: 200px;
+#playlist ul li {
+  width: 150px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -171,11 +170,9 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 #icon-search:hover,
 #icon-library:hover {
   cursor: pointer;
-  
 
   a {
     color: white;
-    
   }
 
   .icon-home-side {
@@ -197,7 +194,6 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 }
 
 #left {
-  
   a {
     font-weight: 700;
     color: rgba(130, 153, 153, 1);
@@ -276,19 +272,18 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 
 #playlist {
   color: rgba(130, 153, 153, 1);
-  height:75%;
+  height: 75%;
   overflow-y: scroll;
-  font-weight:400;
+  font-weight: 400;
   font-size: 0.9em;
-  position:absolute;
-  top:330px;
+  position: absolute;
+  top: 330px;
   overflow-y: scroll;
-  width:90%;
+  width: 90%;
 
   li:hover {
     cursor: pointer;
     color: white;
-    
   }
 
   li a {
@@ -331,9 +326,8 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
   filter: brightness(1.4);
 }
 
-
 #left a {
-  font-size: 0,8rem;
+  font-size: 0, 8rem;
   font-weight: 500;
   color: #b3b3b3;
 }
@@ -391,7 +385,6 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 
 #playlist {
   color: #b3b3b3;
- 
 }
 #playlist li:hover {
   cursor: pointer;
@@ -400,246 +393,305 @@ $theme-colors: map-merge($theme-colors, $new-theme-colors);
 #playlist li a {
   padding: 0;
 }
-nav{
-  width:23%;
+nav {
+  width: 20%;
+  min-width: 200px;
   font-size: 0.9em;
-  top:0;
-  position:fixed;
-  z-index:1;
+  top: 0;
+  position: fixed;
+  z-index: 1;
   background-color: black;
 }
 
-/* css del player  */ 
+/* css del player  */
 
 footer {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 0;
-    z-index: 101;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 101;
+}
+
+#player-spotify {
+  background-color: rgb(18, 18, 18);
+  padding: 2rem 2rem;
+  color: white;
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+}
+#player-spotify button {
+  background-color: transparent;
+  border: none;
+}
+
+#container_heart-placeholder {
+  display: flex;
+  align-items: center;
+}
+
+#heart-player {
+  font-size: 1.3rem;
+  color: white;
+}
+#heart-player .bi-heart-fill {
+  color: rgb(30, 215, 96);
+}
+#heart-player:hover {
+  color: white;
+  cursor: pointer;
+}
+/* dimensione testo prima col player */
+
+#title-song {
+  font-size: 0.8em;
+}
+#sub-test_player a {
+  color: rgb(188, 188, 188);
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+#controls_player {
+  font-size: 1.7rem;
+  position: relative;
+}
+
+#filled-bar {
+  display: flex;
+}
+
+#container_filler-bar {
+  display: inline-flex;
+  height: 8px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: rgb(188, 188, 188);
+  position: relative;
+}
+
+#filler_bar-time {
+  position: absolute;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#filler_bar-time:hover {
+  background-color: rgb(30, 215, 96);
+}
+
+.animation_filler-bar {
+  -webkit-animation: progress-animation 30s linear;
+  animation: progress-animation 30s linear;
+}
+
+.started-animation_filler-bar {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.paused-animation_filler-bar {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+#customRange1 {
+  width: 60px;
+  margin-right: 20px;
+  margin-left: -10px !important;
+}
+
+#player_right-side i {
+  margin-right: 1rem;
+}
+
+#btn_play-pause--audio {
+  color: white;
+  font-size: 130%;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.bi-shuffle,
+.bi-skip-start-fill,
+.bi-skip-end-fill,
+.bi-repeat {
+  color: rgb(188, 188, 188);
+}
+.bi-shuffle:hover,
+.bi-skip-start-fill:hover,
+.bi-skip-end-fill:hover,
+.bi-repeat:hover {
+  color: white;
+}
+
+.bi-shuffle,
+.bi-repeat {
+  font-size: 80%;
+}
+
+.btn_colorize-green {
+  color: rgb(30, 215, 96) !important;
+}
+
+#player_right-side {
+  position: relative;
+}
+#player_right-side button {
+  color: rgb(188, 188, 188);
+}
+#player_right-side button i {
+  font-size: 1.2rem;
+}
+#player_right-side button:hover {
+  color: white;
+}
+#player_right-side #modal_control-device {
+  position: absolute;
+  top: -418px;
+  background-color: #121212;
+  border-radius: 3px;
+  font-size: 0.3rem;
+  padding: 1.5rem;
+  line-height: 1.5;
+  min-width: 350px;
+  right: 16px;
+}
+#player_right-side #modal_control-device i {
+  font-size: 1rem;
+  color: rgb(188, 188, 188);
+}
+#player_right-side #modal_control-device p {
+  color: rgb(188, 188, 188);
+}
+#player_right-side #modal_control-device h4 {
+  font-size: 0.9rem;
+}
+#player_right-side #current_device,
+#player_right-side #control_wifi,
+#player_right-side #control_another-device,
+#player_right-side #control_speaker,
+#player_right-side #error_device {
+  display: flex !important;
+  justify-content: start;
+  align-items: center;
+}
+#player_right-side #current_device i,
+#player_right-side #current_device p {
+  color: rgb(30, 215, 96);
+}
+#player_right-side #modal-sub {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+#player_right-side #modal-sub i {
+  font-size: 1rem;
+}
+#player_right-side #square-rotate {
+  height: 40px;
+  width: 30px;
+  background-color: #121212;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 45%;
+  bottom: -10px;
+}
+#player_right-side #container_heart-placeholder {
+  position: relative;
+}
+
+@-webkit-keyframes progress-animation {
+  0% {
+    width: 0%;
   }
-  
-  #player-spotify {
-    background-color: rgb(18, 18, 18);
-    padding: 2rem 2rem;
-    color: white;
+  50% {
+    width: 50%;
+  }
+  100% {
     width: 100%;
-    height: 100px;
-    z-index: 100;
   }
-  #player-spotify button {
-    background-color: transparent;
-    border: none;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
   }
-  
-  #cover-player {
-    height: 70px;
-    width: 70px;
-    border-radius: 3px;
-    margin-right: 15px;
+  50% {
+    width: 50%;
   }
-  
-  #text-player {
-    margin-right: 15px;
+  100% {
+    width: 100%;
   }
-  
-  #container_heart-placeholder {
-    display: flex;
-    align-items: center;
+}
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 910px,
+  xl: 1200px,
+  xxl: 1400px
+);
+#newmobile{
+  visibility:hidden;
+}
+#altro{
+  visibility:visible;
+ }
+
+
+/* BREAKPOINT PER VERSIONE MOBILE COM MAX-WITH DI 910PX */
+
+
+@media screen and (max-width: 910px) {
+  body{
+    min-width: 250px;
   }
-  
-  #heart-player {
-    font-size: 1.3rem;
-    color: white;
+  #aside1 {
+    display: none;
+    width: 0;
   }
-  #heart-player .bi-heart-fill {
-    color: rgb(30, 215, 96);
+  #aside2 {
+    display: none;
   }
-  #heart-player:hover {
-    color: white;
-    cursor: pointer;
+  section {
+    width: 90%;
+    margin: 0 auto;
   }
-  
-  #sub-test_player {
-    color: rgb(188, 188, 188);
+  #box {
+    width:48%;
+    min-width: 70px;
+    min-height: 40px;
+    box-sizing: border-box;
   }
-  
-  #controls_player {
-    font-size: 1.7rem;
-    position: relative;
-  }
-  
-  #filled-bar {
-    display: flex;
-  }
-  
-  #container_filler-bar {
-    display: inline-flex;
-    height: 8px;
-    width: 300px;
-    border-radius: 5px;
-    margin: 0 10px;
-    background-color: rgb(188, 188, 188);
-    position: relative;
-  }
-  
-  #filler_bar-time {
-    position: absolute;
-    height: 100%;
-    background-color: white;
-    border-radius: 5px;
+  #box p{
+    width: 50px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-  #filler_bar-time:hover {
-    background-color: rgb(30, 215, 96);
+  #adv{
+    display:none;
   }
-  
-  .animation_filler-bar {
-    -webkit-animation: progress-animation 30s linear;
-            animation: progress-animation 30s linear;
+  #amici{
+   display:none
   }
-  
-  .started-animation_filler-bar {
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
+  #newmobile{
+    visibility:visible
   }
-  
-  .paused-animation_filler-bar {
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
+  #images {
+    width: 40%;
+    
   }
-  
-  #customRange1 {
-    width: 60px;
-    margin-right: 20px;
-    margin-left: -10px !important;
+  #altro{
+   visibility:hidden;
   }
-  
-  #player_right-side i {
-    margin-right: 1rem;
-  }
-  
-  #btn_play-pause--audio {
-    color: white;
-    font-size: 130%;
-  }
-  
-  i:hover {
-    cursor: pointer;
-  }
-  
-  .bi-shuffle,
-  .bi-skip-start-fill,
-  .bi-skip-end-fill,
-  .bi-repeat {
-    color: rgb(188, 188, 188);
-  }
-  .bi-shuffle:hover,
-  .bi-skip-start-fill:hover,
-  .bi-skip-end-fill:hover,
-  .bi-repeat:hover {
-    color: white;
-  }
-  
-  .bi-shuffle,
-  .bi-repeat {
-    font-size: 80%;
-  }
-  
-  .btn_colorize-green {
-    color: rgb(30, 215, 96) !important;
-  }
-  
-  #player_right-side {
-    position: relative;
-  }
-  #player_right-side button {
-    color: rgb(188, 188, 188);
-  }
-  #player_right-side button i {
-    font-size: 1.1rem;
-  }
-  #player_right-side button:hover {
-    color: white;
-  }
-  #player_right-side #modal_control-device {
-    position: absolute;
-    top: -418px;
-    background-color: #121212;
-    border-radius: 3px;
-    font-size: 0.3rem;
-    padding: 1.5rem;
-    line-height: 1.5;
-    min-width: 350px;
-    right: 16px;
-  }
-  #player_right-side #modal_control-device i {
-    font-size: 1.6rem;
-    color: rgb(188, 188, 188);
-  }
-  #player_right-side #modal_control-device p {
-    color: rgb(188, 188, 188);
-  }
-  #player_right-side #modal_control-device h4 {
-    font-size: 0.9rem;
-  }
-  #player_right-side #current_device,
-  #player_right-side #control_wifi,
-  #player_right-side #control_another-device,
-  #player_right-side #control_speaker,
-  #player_right-side #error_device {
-    display: flex !important;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  #player_right-side #current_device i,
-  #player_right-side #current_device p {
-    color: rgb(30, 215, 96);
-  }
-  #player_right-side #modal-sub {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #player_right-side #modal-sub i {
-    font-size: 1rem;
-  }
-  #player_right-side #square-rotate {
-    height: 40px;
-    width: 30px;
-    background-color: #121212;
-    transform: rotate(45deg);
-    position: absolute;
-    right: 45%;
-    bottom: -10px;
-  }
-  #player_right-side #container_heart-placeholder {
-    position: relative;
-  }
-  
-  @-webkit-keyframes progress-animation {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  
-  @keyframes progress-animation {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
+
+}
 
 /* ************++ */
 @import "./bootstrap.scss";

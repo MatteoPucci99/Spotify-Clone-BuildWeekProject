@@ -18,11 +18,15 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=hiphop")
   });
 
 // FUNCTION PER GENERARE LE CARDS
-const generateCards = (album) => {
+
+
+/* card per screem grande */
+
+/* const generateCards = (album) => {
   album.data.forEach((el, index) => {
-    if (index < 12) {
+    if (index < 16) {
       const newCol = document.createElement("div");
-      newCol.classList.add("col", "my-2","p-1");
+      newCol.classList.add("col", "my-2", "p-1");
       newCol.innerHTML = `
     <div class="card h-100 border-0 p-2 bg-white-50" style="width: 12rem;">
         <img src="${el.album.cover_big}" class="card-img-top img-fluid" alt="img-${index}">
@@ -41,12 +45,79 @@ const generateCards = (album) => {
       myRow.appendChild(newCol);
     }
   });
+}; */
+
+
+const generateCards = (album) => {
+  album.data.forEach((el, index) => {
+    if(index<16){
+    const newCol = document.createElement("div");
+    newCol.classList.add("col", "my-2", "p-1");
+
+    if (window.innerWidth > 910) {
+      newCol.innerHTML = `
+        <div class="card h-100 border-0 p-2 bg-white-50" style="width: 12rem;">
+          <img src="${el.album.cover_big}" class="card-img-top img-fluid" alt="img-${index}">
+          <div class="card-body d-flex flex-column justify-content-between px-0">
+            <div>
+              <h6 class="card-title"><a class="text-decoration-none text-white" href="/albumPage/album.html?albumId=${el.album.id}">${el.album.title}</a></h6>
+            </div>
+            <div>
+              <p class="card-text"> <a class="text-white" href="#">${el.artist.name}</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      newCol.innerHTML = `
+      <div class="card border-0 px-4 pt-4 bg-white-50" style="width:18rem;">
+      <div>
+         <img src="${el.album.cover_big}" class="img-fluid w-50" alt="img-${index}">
+       <span class="card-title ps-3"><a class="text-decoration-none text-white" href="/albumPage/album.html?albumId=${el.album.id}">${el.album.title}</a></span>
+      </div>
+      <div class="card-body d-flex flex-column justify-content-between px-0">
+      <div>
+      <button id="heart-player" onclick="selectedHeart()" class="col-2">
+      <i class="bi bi-heart d-flex" id="heart"></i>
+      <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
+      </button>
+      <i class="bi bi-three-dots-vertical"></i>
+      </div>
+      <div>
+      <p class="card-text"> <a class="text-seconday" href="#">${el.data.length}</a></p>
+        </div>
+      </div>
+    </div>
+      `;
+    }
+
+    myRow.appendChild(newCol);}
+  });
 };
+
+function onResize() {
+  if (window.innerWidth > 910) {
+    generateCards(data);
+  } else {
+    myRow.innerHTML = "";
+
+    // Genera il nuovo contenuto
+    generateCards(data);
+  }
+}
+
+// Richiamo la funzione al caricamento della pagina
+onResize();
+
+// Aggiungi un eventlistener per l'evento resize
+window.addEventListener("resize", onResize);
+
+
 
 // RINTRACCIO LA COL TARGET
 const activityCol = document.getElementById("activityCol");
 const contentCol = document.getElementById("section");
-const aside2 = document.getElementById('aside2')
+const aside2 = document.getElementById("aside2");
 
 const closeFriendsPage = (e) => {
   // console.log(activityCol);
@@ -60,30 +131,28 @@ const openFriendsPage = (e) => {
   activityCol.classList.remove("d-none");
   activityCol.classList.add("new-width2");
   contentCol.classList.add("new-width");
-  aside2.classList.add('new-width2')
+  aside2.classList.add("new-width2");
 };
-
 
 /* LOGICA PLAYER */
 
 function espandi() {
   if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
+    document.documentElement.requestFullscreen();
   } else if (document.exitFullscreen) {
-      document.exitFullscreen();
+    document.exitFullscreen();
   }
 }
 
-
 function playA() {
-  let song = JSON.parse(window.localStorage.getItem("traccia"))
+  let song = JSON.parse(window.localStorage.getItem("traccia"));
 
   let aux = document.querySelector(".player");
   if (aux.paused || aux.currentTime === 0 || aux.ended) {
-      avviaTraccia(aux, song)
+    avviaTraccia(aux, song);
   } else {
-      fermaTraccia(aux)
-      avviaTraccia(aux, song)
+    fermaTraccia(aux);
+    avviaTraccia(aux, song);
   }
 }
 
@@ -92,7 +161,7 @@ function avviaTraccia(player, traccia) {
   player.play();
   seconds = 1;
   let fillerBarElement = document.querySelector("#filler_bar-time");
-  fillerBarElement.style.animation = 'none';
+  fillerBarElement.style.animation = "none";
   fillerBarElement.offsetHeight; /* trigger reflow */
   fillerBarElement.style.animation = null;
 
@@ -113,7 +182,6 @@ function selectedHeart() {
 
   btnHeart.classList.toggle("d-none");
   btnHeartFill.classList.toggle("d-none");
-
 }
 
 function selectedPlayPause() {
@@ -122,10 +190,10 @@ function selectedPlayPause() {
   let aux = document.querySelector(".player");
 
   if (!aux.paused) {
-      fermaTraccia(aux)
+    fermaTraccia(aux);
   } else {
-      aux.play()
-      setStartFillerBar();
+    aux.play();
+    setStartFillerBar();
   }
 
   btnPlay.classList.toggle("d-none");
@@ -161,23 +229,23 @@ function setStartFillerBar() {
   fillerBarElement.classList.add("animation_filler-bar");
 
   const changeSeconds = setInterval(() => {
-      if (seconds < 10) {
-          seconds = "0" + `${seconds}`;
-      }
+    if (seconds < 10) {
+      seconds = "0" + `${seconds}`;
+    }
 
-      progressTimeElement.innerHTML = `0:${seconds}`;
-      seconds++;
+    progressTimeElement.innerHTML = `0:${seconds}`;
+    seconds++;
 
-      clearIntervalID = changeSeconds;
+    clearIntervalID = changeSeconds;
 
-      if (seconds === 31) {
-          clearInterval(changeSeconds);
-          seconds = 1;
-      }
+    if (seconds === 31) {
+      clearInterval(changeSeconds);
+      seconds = 1;
+    }
   }, 1000);
 
   if (fillerBarElement.className.includes("paused-animation_filler-bar")) {
-      fillerBarElement.classList.remove("paused-animation_filler-bar");
+    fillerBarElement.classList.remove("paused-animation_filler-bar");
   }
 }
 
@@ -191,7 +259,9 @@ function setPauseFillerBar() {
 
 function setNameArtistSong(traccia) {
   document.querySelector("#cover-player").src = traccia.album.cover_xl;
-  document.querySelector("#sub-test_player").innerHTML = `<a href="artist.html" onclick='localStorage.setItem("id_artist", ${traccia.artist.id})'>${traccia.artist.name}</a>`;
+  document.querySelector(
+    "#sub-test_player"
+  ).innerHTML = `<a href="artist.html" onclick='localStorage.setItem("id_artist", ${traccia.artist.id})'>${traccia.artist.name}</a>`;
   document.querySelector("#title-song").innerHTML = traccia.title_short;
 }
 
@@ -211,10 +281,13 @@ function mutedAudio() {
   let playerElement = document.querySelector(".player");
 
   if (audioState === false) {
-      playerElement.muted = true;
-      audioState = true;
+    playerElement.muted = true;
+    audioState = true;
   } else {
-      playerElement.muted = false;
-      audioState = false;
+    playerElement.muted = false;
+    audioState = false;
   }
 }
+
+/*  FUNZIONE PER MEDIA SCREEN */
+
