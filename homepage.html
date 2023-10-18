@@ -401,19 +401,20 @@
     </aside>
     </div>
     </main>
-    <footer id="footer" class="row">
+    <footer id="footer" class="row mx-0">
       <div id="main-footer">
       <div
-        class="d-flex justify-content-between align-items-center position-sticky bottom-0 p-3"
+        class="row d-flex justify-content-between align-items-center position-sticky bottom-0 p-3"
         id="player-spotify"
       >
-        <div class="col-3 d-flex align-items-center py-4 px-2" id="footer1">
+        <div class="col-3 d-flex align-items-center " id="footer1">
           <div class="col-3">
             <img
               id="cover-player"
               src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
               alt=""
               class="img-fluid"
+              
             />
           </div>
           <div id="text-player" class="col-7 ps-3 pt-4 ">
@@ -584,14 +585,17 @@
                 class="bi bi-pc-display-horizontal"
               ></i>
           </div>
-          <div class="col-2">
+          <div class="col-1">
             <button id="heart-player" onclick="selectedHeart()" class="col-2">
               <i class="bi bi-heart d-flex " id="heart"></i>
               <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
             </button>
           </div>
-          <div class="col-1">
-            <i class="bi bi-play-circle-fill"></i>
+          <div class="col-2">
+            <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
+              <i class="bi bi-play-circle-fill" id="btn_play"></i>
+              <i class="bi bi-pause-circle d-none" id="btn_pause"></i>
+            </button>
           </div>
          </div>
          </div>
@@ -599,7 +603,8 @@
          <div class="row mx-auto align-items-center" id="newMenu">
           <div class="col-4 text-center">
             <div id="icon-home">
-              <a href="home.html" class="text-decoration-none">
+              <a href="home.html" class="text-decoration-none  text-secondary">
+                <div>
                 <img
                   class="icon-home-side"
                   src="assets/imgs/icone/sidebar_home.png"
@@ -610,13 +615,15 @@
                   src="assets/imgs/icone/sidebar_home_hover.png"
                   alt=""
                 />
+               </div>
                 Home
               </a>
             </div>
           </div>
           <div class="col-4 text-center">
             <div id="icon-search">
-              <a href="search.html" class="text-decoration-none">
+              <a href="search.html" class="text-decoration-none  text-secondary">
+                <div>
                 <img
                   class="icon-home-side"
                   src="assets/imgs/icone/sidebar_search.png"
@@ -626,14 +633,15 @@
                   class="icon-home-side-hide"
                   src="assets/imgs/icone/sidebar_search_hover.png"
                   alt=""
-                />
+                /></div>
                 Cerca
               </a>
             </div>
           </div>
           <div class="col-4 text-center">
             <div id="icon-library">
-              <a href="#" class="text-decoration-none">
+              <a href="#" class="text-decoration-none  text-secondary">
+                <div>
                 <img
                   class="icon-home-side"
                   src="assets/imgs/icone/sidebar_library.png"
@@ -644,6 +652,7 @@
                   src="assets/imgs/icone/sidebar_library_hover.png"
                   alt=""
                 />
+              </div>
                 La tua libreria
               </a>
             </div>

@@ -416,7 +416,6 @@ footer {
   background-color: rgb(18, 18, 18);
   padding: 2rem 2rem;
   color: white;
-  width: 100%;
   height: 100px;
   z-index: 100;
 }
@@ -644,11 +643,19 @@ $grid-breakpoints: (
  }
 #main-footer{
   display: block;
+  position:fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #secondary-footer{
   display: none;
 
 }
+#cover-player{
+  width:60%
+}
+
 /* BREAKPOINT PER VERSIONE MOBILE COM MAX-WITH DI 910PX */
 
 
@@ -697,6 +704,7 @@ $grid-breakpoints: (
   }
   #main-footer{
     display: none;
+   
   }
   #player-spotify{
     padding: 0.5rem 0.5rem;
@@ -708,6 +716,10 @@ $grid-breakpoints: (
     display:block;
     width: 75%;
     height:150px;
+    position:fixed;
+    bottom: 0;
+    left: 50%;
+  transform: translateX(-50%);
   }
   #tofix{
     width: 80px;
@@ -716,7 +728,7 @@ $grid-breakpoints: (
     text-overflow: ellipsis;
   }
   #newMenu{
-   height:70%;
+   height:60%;
    background: linear-gradient(to top,black,rgba(0, 0, 0, 0.931))
   }
 }

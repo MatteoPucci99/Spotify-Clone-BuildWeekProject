@@ -48,7 +48,25 @@ const generateCards = (album) => {
 };
 
 
+// RINTRACCIO LA COL TARGET
+const activityCol = document.getElementById("activityCol");
+const contentCol = document.getElementById("section");
+const aside2 = document.getElementById("aside2");
 
+const closeFriendsPage = (e) => {
+  // console.log(activityCol);
+  activityCol.classList.add("d-none");
+  activityCol.classList.remove("new-width2");
+  contentCol.classList.remove("new-width");
+};
+
+const openFriendsPage = (e) => {
+  // console.log(e.target);
+  activityCol.classList.remove("d-none");
+  activityCol.classList.add("new-width2");
+  contentCol.classList.add("new-width");
+  aside2.classList.add("new-width2");
+};
 
 /* LOGICA PLAYER */
 
@@ -205,4 +223,5 @@ function mutedAudio() {
   }
 }
 
+/*  FUNZIONE PER MEDIA SCREEN */
 
