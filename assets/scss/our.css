@@ -148,7 +148,7 @@ section {
 }
 
 #playlist ul li {
-  width: 150px;
+  width: 90%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
