@@ -1,0 +1,35 @@
+@media screen and (min-width: 700px) and (max-width: 1800px) {
+  #serch {
+    display: none;
+  }
+
+  header {
+    display: flex;
+  }
+}
+#boxuno {
+  padding-top: 20px;
+  margin-left: 0px;
+  border-radius: 100%;
+}
+#row {
+  margin-top: 20px;
+}
+#writeuno {
+  display: none;
+}
+#carduno {
+  margin: 20px;
+}
+
+@media screen and (min-width: 10px) and (max-width: 700px) {
+  #row {
+    display: none;
+  }
+  #write {
+    display: none;
+  }
+  #carduno {
+    display: none;
+  }
+}
