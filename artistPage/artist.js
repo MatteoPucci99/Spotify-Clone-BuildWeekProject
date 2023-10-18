@@ -50,14 +50,20 @@ const calculateAverageColor = (imageData) => {
 
 // FUNCTION PER GENERARE ALBUM DETAILS
 const generateDetails = (details) => {
+  const options = {
+    style: "decimal",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  };
   secondRow.innerHTML = `
-  <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-start mt-4">
-    <img src="${details.picture_big}" crossorigin="anonymous" alt="img" width="70%" id="myImg"/>
-
-    <div class="d-flex flex-column justify-content-end">
-      <h1 class="mt-4 display-3 ms-3 fs-md-4">${details.name}</h1>
-  
-    </div>
+  <div class="d-flex justify-content-center mt-4">
+    <img src="${
+      details.picture_big
+    }" crossorigin="anonymous" alt="img" width="70%" id="myImg"/>
+  </div>
+  <div class="d-flex flex-column justify-content-end ps-3 ps-md-0">
+    <h1 class="mt-4 fs-md-4">${details.name}</h1>
+    <p> Ascoltatori mensili: ${details.nb_fan.toLocaleString("it-IT", options)}
   </div>
   `;
   const myImg = document.getElementById("myImg");
