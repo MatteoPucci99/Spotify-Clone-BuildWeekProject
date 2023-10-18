@@ -87,6 +87,10 @@ const generateDetails = (details) => {
     bgTarget.style.background = `linear-gradient(to bottom, rgb(${averageColor[0]},${averageColor[1]},${averageColor[2]}) calc(-30% + 0px), rgb(33,37,41))`;
     console.log(bgTarget);
   };
+
+  const bgContent = document.getElementById("bgContent");
+  bgContent.style.backgroundColor = "rgba(0,0,0, 0.2)";
+
   const currentHeight = bgTarget.offsetHeight;
   if (currentHeight < window.innerHeight) {
     bgTarget.style.height = "100vh";
@@ -98,6 +102,12 @@ const generateTracks = (tracks) => {
   tracks.tracks.data.forEach((el) => {
     let seconds = el.duration % 60;
     seconds = seconds.toString().padStart(2, "0");
+    const options = {
+      style: "decimal",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    };
+
     const content = document.createElement("div");
     content.classList.add("d-flex", "align-items-center");
     content.innerHTML = `
@@ -111,7 +121,10 @@ const generateTracks = (tracks) => {
            style="font-size: 1.5em"
            class="bi bi-three-dots-vertical d-md-none"
          ></i>
-         <p class="mb-0 d-none d-md-block">${el.rank}</p>
+         <p class="mb-0 d-none d-md-block">${el.rank.toLocaleString(
+           "it-IT",
+           options
+         )}</p>
        </div>
       </div>
        <div class="col d-flex justify-content-end d-none d-md-flex">
