@@ -31,7 +31,7 @@ const defaultContent = document.getElementById("defaultContent");
 console.log(defaultContent.querySelectorAll("div"));
 
 defaultContent.querySelectorAll("img").forEach((el) => {
-  el.classList.add("w-75", "ms-4", "mb-4");
+  el.classList.add( "ms-4", "mb-4");
 });
 
 /* GENERA BRANI */

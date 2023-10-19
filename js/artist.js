@@ -28,6 +28,10 @@ const calculateAverageColorFromImage = (image) => {
   return averageColor;
 };
 
+
+localStorage.setItem("id_artist", artistId )
+
+
 // Funzione per calcolare il colore medio da un array di dati dell'immagine
 const calculateAverageColor = (imageData) => {
   let sumRed = 0;
