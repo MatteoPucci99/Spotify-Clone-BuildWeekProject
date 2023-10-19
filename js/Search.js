@@ -47,8 +47,9 @@ tracks.data.forEach((el, index) => {
     const content = document.createElement("div");
     content.classList.add("d-flex", "align-items-center", "px-4");
     content.innerHTML = `
-  <div class="col col-md-8 d-flex justify-content-between">
-     <div>
+  <div class="col col-md-8 d-flex justify-content-between py-2">
+     <div class="d-flex">
+       <img src="../assets/imgs/search/image-48.jpeg" height="50px" class="me-2">
        <h6 class="mb-4 pe-3">${el.title}</h6>
      </div>
      <div class="d-flex align-items-center">
