@@ -26,6 +26,14 @@ myForm.addEventListener("submit", (e) => {
     });
 });
 
+const defaultContent = document.getElementById("defaultContent");
+
+console.log(defaultContent.querySelectorAll("div"));
+
+defaultContent.querySelectorAll("img").forEach((el) => {
+  el.classList.add("w-75", "ms-4", "mb-4");
+});
+
 /* GENERA BRANI */
 
 const bgContent = document.getElementById("brani");
@@ -52,7 +60,12 @@ const generateTracks = (tracks) => {
      <div class="d-flex">
        <img src="${el.album.cover_big}" height="50px" class="me-2">
        <div class="d-flex flex-column justify-content-center">
+       <a class="text-decoration-none text-white" href="album.html?albumId=${
+         el.album.id
+       }">
        <h6 class="mb-0 pe-3">${el.album.title}</h6>
+       
+       </a>
        <p class="mb-0 text-secondary text-decoration-underline">${
          el.artist.name
        }</p>
