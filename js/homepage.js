@@ -25,7 +25,14 @@ const generateCards = (album) => {
   album.data.forEach((el, index) => {
     if (index < 16) {
       const newCol = document.createElement("div");
-      newCol.classList.add("col", "my-2", "p-1");
+      newCol.classList.add(
+        "col",
+        "my-2",
+        "p-1",
+        "d-flex",
+        "justify-content-center",
+        "justify-content-lg-start"
+      );
       newCol.innerHTML = `
     <div class="card h-100 border-0 p-2 bg-white-50" style="width: 12rem;">
         <img src="${el.album.cover_big}" class="card-img-top img-fluid" alt="img-${index}">
