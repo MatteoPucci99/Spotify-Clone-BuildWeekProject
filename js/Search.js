@@ -16,41 +16,47 @@ myForm.addEventListener("submit", (e) => {
       }
     })
     .then((data) => {
-      console.log("Search", data); 
+      console.log("Search", data);
       generateTracks(data);
-      generateDetails(data)
-      generateCards(data);
-     
+      // generateDetails(data);
+      // generateCards(data);
     })
     .catch((err) => {
       console.log(err);
     });
 });
-  
+
 /* GENERA BRANI */
 
 const bgContent = document.getElementById("brani");
-
+const albumSection = document.getElementById("albumSection");
 
 // FUNCTION PER GENERARE LE TRACKS
 const generateTracks = (tracks) => {
-tracks.data.forEach((el, index) => {
-  if (index < 5) {
-    let seconds = el.duration % 60;
-    seconds = seconds.toString().padStart(2, "0");
-    const options = {
-      style: "decimal",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2,
-    };
+  albumSection.classList.remove("d-none");
+  bgContent.innerHTML = "";
+  tracks.data.forEach((el, index) => {
+    if (index < 15) {
+      let seconds = el.duration % 60;
+      seconds = seconds.toString().padStart(2, "0");
+      const options = {
+        style: "decimal",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+      };
 
-    const content = document.createElement("div");
-    content.classList.add("d-flex", "align-items-center", "px-4");
-    content.innerHTML = `
-  <div class="col col-md-8 d-flex justify-content-between py-2">
+      const content = document.createElement("div");
+      content.classList.add("d-flex", "align-items-center", "px-4");
+      content.innerHTML = `
+  <div class="col col-md-8 d-flex flex-grow-1 justify-content-between py-2">
      <div class="d-flex">
-       <img src="../assets/imgs/search/image-48.jpeg" height="50px" class="me-2">
-       <h6 class="mb-4 pe-3">${el.title}</h6>
+       <img src="${el.album.cover_big}" height="50px" class="me-2">
+       <div class="d-flex flex-column justify-content-center">
+       <h6 class="mb-0 pe-3">${el.album.title}</h6>
+       <p class="mb-0 text-secondary text-decoration-underline">${
+         el.artist.name
+       }</p>
+       </div>
      </div>
      <div class="d-flex align-items-center">
        <i
@@ -63,33 +69,21 @@ tracks.data.forEach((el, index) => {
        )}</p>
      </div>
     </div>
-     <div class="col d-flex justify-content-end d-none d-md-flex">
-        <p class="mb-0 d-none d-md-block">${Math.floor(
-          el.duration / 60
-        )}:${seconds}</p>
-      </div>
+  
   `;
 
-    bgContent.appendChild(content);
-  }
-});
+      bgContent.appendChild(content);
+    }
+  });
 };
 
-
-
-
-
 /* GENERA ARTISTI */
-
-
-
-
 
 /* GENERA ALBUM */
 const bgContent1 = document.getElementById("album");
 
 const generateDetails = (details) => {
-  const secondRow = document.createElement('div')
+  const secondRow = document.createElement("div");
   secondRow.innerHTML = `
   <div class="d-flex justify-content-center mt-4">
   <img src="${
@@ -115,9 +109,8 @@ const generateDetails = (details) => {
   </div>
 </div>
   `;
-  bgContent1.appendChild(secondRow)
-}
-
+  bgContent1.appendChild(secondRow);
+};
 
 /* LOGICA PLAYER */
 
@@ -274,9 +267,9 @@ function mutedAudio() {
   }
 }
 
-  /* MENU A TENDINA DX SCOMPARSA */
+/* MENU A TENDINA DX SCOMPARSA */
 
-  // RINTRACCIO LA COL TARGET
+// RINTRACCIO LA COL TARGET
 const activityCol = document.getElementById("activityCol");
 const contentCol = document.getElementById("section");
 const aside2 = document.getElementById("aside2");

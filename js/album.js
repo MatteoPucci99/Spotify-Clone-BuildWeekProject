@@ -89,7 +89,8 @@ const generateDetails = (details) => {
   };
 
   const bgContent = document.getElementById("bgContent");
-  bgContent.style.background = "linear-gradient(to top,rgb(0,0,0),rgba(0,0,0, 0.2)";
+  bgContent.style.background =
+    "linear-gradient(to top,rgb(0,0,0),rgba(0,0,0, 0.2)";
 
   const currentHeight = bgContent.offsetHeight;
   if (currentHeight < window.innerHeight) {
@@ -153,7 +154,6 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
   .catch((err) => {
     console.log(err);
   });
-
 
 /* LOGICA PLAYER */
 
@@ -310,9 +310,9 @@ function mutedAudio() {
   }
 }
 
- /* MENU A TENDINA DX SCOMPARSA */
-  
-  // RINTRACCIO LA COL TARGET
+/* MENU A TENDINA DX SCOMPARSA */
+
+// RINTRACCIO LA COL TARGET
 const activityCol = document.getElementById("activityCol");
 const contentCol = document.getElementById("section");
 const aside2 = document.getElementById("aside2");
