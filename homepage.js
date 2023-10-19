@@ -41,7 +41,7 @@ const generateCards = (album) => {
       const newCol = document.createElement("div");
       newCol.classList.add("col", "mt-5");
       newCol.innerHTML = `
-    <div class="card h-100">
+    <div class="card h-100 p-3">
         <img src="${el.album.cover_big}" class="card-img-top" alt="img-${index}">
         <div class="card-body d-flex flex-column justify-content-between">
             <div>
