@@ -150,6 +150,11 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     console.log("Tracks", data);
     generateTracks(data);
     generateDetails(data);
+
+    let value = data.tracks.data;
+
+    console.log(value);
+    localStorage.setItem("newTracks", JSON.stringify({ value }));
   })
   .catch((err) => {
     console.log(err);
@@ -165,20 +170,40 @@ function espandi() {
   }
 }
 
+const tracks = JSON.parse(localStorage.getItem("newTracks"));
+console.log(tracks);
+
+let index = 1
+
+let song = tracks.value[index].preview;
+console.log(song);
+
+const audioSong= document.getElementById('uscitaAudio')
+audioSong.src = song
+
 function playA() {
-  let song = JSON.parse(window.localStorage.getItem("traccia"));
+  
+  let song = tracks.value[index].preview;
+  
 
   let aux = document.querySelector(".player");
-  if (aux.paused || aux.currentTime === 0 || aux.ended) {
+  if (aux.paused || aux.currentTime === 0) {
     avviaTraccia(aux, song);
   } else {
+    fermaTraccia(aux);
+    avviaTraccia(aux, song);
+  }
+  if(aux.ended){
+    index++;
+    avviaTraccia(aux, song);
+  }else {
     fermaTraccia(aux);
     avviaTraccia(aux, song);
   }
 }
 
 function avviaTraccia(player, traccia) {
-  player.src = traccia.preview;
+  player.src = song;
   player.play();
   seconds = 1;
   let fillerBarElement = document.querySelector("#filler_bar-time");
@@ -228,10 +253,41 @@ function selectedBtnMuteAudio() {
   btnVolumeMute.classList.toggle("d-none");
   btnVolumeUp.classList.toggle("d-none");
 }
+let seconds = 1;
+let clearIntervalID = 0;
 
-function selectedBtnAudioColorizeGreen(event) {
-  let btnSelected = event.querySelector(".bi");
-  btnSelected.classList.toggle("btn_colorize-green");
+function selectedBtnAudioColorizeGreenPrevious(event) {
+  let aux = document.querySelector(".player");
+  if (index > 0) {
+    index = index - 1;
+    song = tracks.value[index].preview;
+    audioSong.src = song;
+
+    foto.src = tracks.value[index].album.cover_big;
+    foto1.src = tracks.value[index].album.cover_big;
+    title.innerText = tracks.value[index].title;
+    title1.innerHTML = tracks.value[index].title;
+    aux.play(); 
+    
+  }
+}
+
+function selectedBtnAudioColorizeGreenNext(event) {
+  let aux = document.querySelector(".player");
+  if (index < tracks.value.length - 1) {
+    index = index + 1;
+    song = tracks.value[index].preview;
+    audioSong.src = song;
+    foto.src = tracks.value[index].album.cover_big;
+    foto1.src = tracks.value[index].album.cover_big;
+    title.innerText = tracks.value[index].title;
+    title1.innerHTML = tracks.value[index].title;
+    aux.play(); 
+    clearIntervalID = 0;
+    seconds = 1;
+   
+  }
+
 }
 
 function selectedModalControlDevic() {
@@ -240,8 +296,7 @@ function selectedModalControlDevic() {
   modalElement.classList.toggle("d-none");
 }
 
-let seconds = 1;
-let clearIntervalID = 0;
+
 
 function setStartFillerBar() {
   const progressTimeElement = document.querySelector("#progress-time");
@@ -278,18 +333,23 @@ function setPauseFillerBar() {
   clearInterval(clearIntervalID);
 }
 
-function setNameArtistSong(traccia) {
-  document.querySelector("#cover-player").src = traccia.album.cover_xl;
-  document.querySelector(
-    "#sub-test_player"
-  ).innerHTML = `<a href="artist.html" onclick='localStorage.setItem("id_artist", ${traccia.artist.id})'>${traccia.artist.name}</a>`;
-  document.querySelector("#title-song").innerHTML = traccia.title_short;
-}
+
+  const foto = document.getElementById("cover-player");
+  const foto1 = document.getElementById("cover-player1");
+  foto.src = tracks.value[index].album.cover_big;
+  foto1.src=tracks.value[index].album.cover_big;
+  console.log(tracks.value[index].album.cover_big)
+  const title = document.getElementById("title-song")
+  const title1 = document.getElementById("title-song1")
+  title.innerText = tracks.value[index].title
+  title1.innerHTML= tracks.value[index].title
+  console.log(tracks.value[index].title)
+
 
 let newObj;
 
-function getAudioObj(audioPreview) {
-  newObj = new Audio(audioPreview);
+function getAudioObj(song) {
+  newObj = new Audio(song);
 }
 
 function changeVolume(rangeValue) {

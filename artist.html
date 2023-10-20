@@ -373,22 +373,13 @@
           <div class="col-3">
             <img
               id="cover-player"
-              src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
               alt=""
               class="img-fluid"
               
             />
           </div>
-          <div id="text-player" class="col-7 ps-3 pt-4 ">
-            <h4 id="title-song" class="mb-0" >Stairway to Heaven</h4>
-            <p id="sub-test_player">
-              <a
-                href="artist.html"
-                onclick='localStorage.setItem("id_artist", 848)'
-                >Led Zeppelin</a
-                id="setArtistId"
-              >
-            </p>
+          <div id="text-player" class="col-7 ps-3 ">
+            <h4 id="title-song"></h4>
           </div>
 
           <button id="heart-player" onclick="selectedHeart()" class="col-2">
@@ -407,20 +398,20 @@
                 liked songs
               </p>
             </div>
-            <button onclick="selectedBtnAudioColorizeGreen(this)">
+            <button onclick="selectedBtnAudioColorizeGreenPrevious(this)">
               <i class="bi bi-shuffle icons-play"></i>
             </button>
-            <button onclick="selectedBtnAudioColorizeGreen(this)">
+            <button onclick="selectedBtnAudioColorizeGreenPrevious(this)">
               <i class="bi bi-skip-start-fill icons-play"></i>
             </button>
             <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
               <i class="bi bi-play-circle-fill " id="btn_play"></i>
               <i class="bi bi-pause-circle d-none" id="btn_pause"></i>
             </button>
-            <button onclick="selectedBtnAudioColorizeGreen(this)">
+            <button onclick="selectedBtnAudioColorizeGreenNext(this)">
               <i class="bi bi-skip-end-fill icons-play"></i>
             </button>
-            <button onclick="selectedBtnAudioColorizeGreen(this)">
+            <button onclick="selectedBtnAudioColorizeGreenNext(this)">
               <i class="bi bi-repeat icons-play"></i>
             </button>
           </div>
@@ -515,7 +506,7 @@
         </div>
         <audio
           class="player"
-          src="https://cdns-preview-0.dzcdn.net/stream/c-00bd440c9ec8b85f26d638febfda5e7c-6.mp3"
+          id="uscitaAudio"
         ></audio>
       </div>
     </div>
@@ -523,25 +514,15 @@
       <div id="secondary-footer" class="p-0">
         <div id="player-spotify" class="mx-3">
          <div class="row px-3 align-items-center">
-          <div class="col-2 ps-1">
+          <div class="col-2">
             <img
-              id="cover-player"
-              src="https://e-cdns-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/1000x1000-000000-80-0-0.jpg"
-              alt=""
-              widht="50px"
+              id="cover-player1"
               height="50px"
-              class="rounded-5 "
+              class="rounded-5"
             />
           </div>
           <div class="col-4 flex-grow-1" id="tofix">
-            <span id="title-song" class="mb-0" >Stairway to Heaven</span>
-            <span id="sub-test_player">
-              <a
-                href="artist.html"
-                onclick='localStorage.setItem("id_artist", 848)'
-                >Led Zeppelin</a
-              >
-            </span>
+            <span id="title-song1"></span>
           </div>
           <div class="col-1">
             <i
