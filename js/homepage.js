@@ -23,7 +23,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=hiphop")
 
 const generateCards = (album) => {
   album.data.forEach((el, index) => {
-    if (index < 16) {
+    if (index < 18) {
       const newCol = document.createElement("div");
       newCol.classList.add("col", "my-2", "p-1","d-flex","justify-content-center");
       newCol.innerHTML = `
