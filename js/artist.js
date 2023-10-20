@@ -185,7 +185,7 @@ function espandi() {
 const tracks = JSON.parse(localStorage.getItem("newTracks1"));
 console.log(tracks);
 
-let index = 1
+let index = 0
 
 let song = tracks.value[index].preview;
 console.log(song);

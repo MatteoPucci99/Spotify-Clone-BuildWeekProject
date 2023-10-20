@@ -1,3 +1,4 @@
+
 // RINTRACCIO L'ID DALLA BARRA DI RICERCA
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get("albumId");
@@ -173,7 +174,7 @@ function espandi() {
 const tracks = JSON.parse(localStorage.getItem("newTracks"));
 console.log(tracks);
 
-let index = 1
+let index = 0
 
 let song = tracks.value[index].preview;
 console.log(song);
